@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas de JavaScript</title>
+</head>
+<body>
+    
+    <!-- EXERCICIO 3, CONTADOR COM VALOR INICIAL(VALOR QUE COMEÇA), VALOR FINAL(ONDE TERMINA) E INCREMENTO(O VALOR PARA SOMAR) -->
+    <!-- <input type="text"> Inicial 
+    <input type="text"> Final
+    <input type="text"> Incremento
+    <button onclick="executar()">Executar</button> -->
+    <h1></h1>
+
+    <script>
+
+        //Valores de bebidas usando prompt, usuário escolhe a bebida e o valor é exibido no prompt.
+
+        // var bebida=prompt("Escolha a bebida:");
+
+        // switch (bebida){
+        //     case "Água":
+        //         document.write("Preço: 4,50")
+        //         break;
+        //     case "Refrigerante":
+        //         document.write("Preço: 6,00")
+        //         break;
+        //     case "Cerveja":
+        //         document.write("Preço: 12,00")
+        //         break;
+        //     case "Suco":
+        //         document.write("Preço: 4,00")
+        //         break;
+        //     default: 
+        //     document.write("Bebida indisponivel");
+        // }
+
+        // EXEMPLO AULA 3
+        // let condicao = false
+        // while(condicao) {
+        //     console.log("Dentro do while");
+        // }
+
+        // do {
+        //     console.log("Dentro do..while");
+        // } while(condicao);
+
+        // for(let cont=1;cont<=10;cont++){
+        //     console.log(`Loop ${cont}`);
+        // }
+
+        // EXEMPLO 2, 1 A 10
+
+        // let Arrayh1= document.getElementsByTagName('h1');
+        // for(let cont=1;cont<=10;cont++){
+        //     Arrayh1[0].innerHTML += ("Loop = " + cont + "</br>");
+        // }
+
+        // EXEMPLO 3, 1 A 10 COM TITULO 
+
+        // let Arrayh1= document.getElementsByTagName('h1');
+        // Arrayh1[0].innerHTML = "<P> Título da lista </p>"
+        // for(let cont=1;cont<=10;cont++){
+        //     Arrayh1[1].innerHTML += ("Loop = " + cont + "</br>");
+        // }
+
+        // EXEMPLO 3.1
+        // let Arrayh1 = document.getElementsByTagName('h1');
+        // //Arrayh1[0].innerHTML = "<P> Título da lista </p>"
+        // for(let cont=0;cont<=(Arrayh1.length-1);cont++){
+        //     Arrayh1[1].innerHTML += ("Loop = " + cont + "</br>");
+        // }
+        
+        // EXEMPLO 3.2 
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // meuH1 = document.createElement("h1");
+        // for(let cont=0;cont<=(ArrayH1.length-1);cont++){
+        //     ArrayH1[1].innerHTML += ("Loop = " + cont + "</br>");
+        // }
+
+        // EXEMPLO 3.3 REGRESSIVO DE 100 A 0
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // meuH1 = document.createElement("h1");
+        // for(let cont=100;cont>=1;cont--){
+        //     if((cont!=66) && (cont!=33)){
+        //     ArrayH1[0].innerHTML += ("Loop = " + cont + "</br>");
+        //     }
+        // }
+
+        // EXEMPLO 3.4 REGRESSIVO DE 100 A 0, TIRANDO O 66 E 33
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // meuH1 = document.createElement("h1");
+        // for(let cont=100;cont>=1;cont--){
+        //     if((cont!=66) && (cont!=33)){
+        //     ArrayH1[0].innerHTML += ("Loop = " + cont + "</br>");
+        //     }
+        // }
+
+        // EXERCICIO 1, EXIBINDO OS NÚMEROS IMPARES
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // meuH1 = document.createElement("h1");
+        // for(let cont=1;cont<100;cont++){
+        //     if((cont % 2 == 1)){
+        //     ArrayH1[0].innerHTML += ("Loop = " + cont + "</br>");
+        //     }
+        // }
+
+        // EXERCICIO 2, EXIBINDO OS NÚMEROS PARES
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // meuH1 = document.createElement("h1");
+        // for(let cont=1;cont<100;cont++){
+        //     if((cont % 2 == 0)){
+        //     ArrayH1[0].innerHTML += ("Loop = " + cont + "</br>");
+        //     }
+        // }
+
+        // EXERCICIO 3, CONTADOR COM VALOR INICIAL(VALOR QUE COMEÇA), VALOR FINAL(ONDE TERMINA) E INCREMENTO(O VALOR PARA SOMAR)
+
+        // let Inicial = parseInt(prompt("Digite o valor inicial:"));
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        // let entradas = document.getElementsByTagName("input");
+        // function executar() {
+        //     for(let cont=parseInt(entradas[0].value); cont<= parseInt(entradas[1].value); cont+= parseInt(entradas[2].value)) {
+        //         ArrayH1[0].innerHTML += ("<li> Contador => " + cont + "</li>");
+        //     }
+        // }
+
+
+        // EXERCICIO 3.1, CONTADOR COM VALOR INICIAL(VALOR QUE COMEÇA), VALOR FINAL(ONDE TERMINA) E INCREMENTO(O VALOR PARA SOMAR)
+        //PROMPT
+
+        // let ArrayH1 = document.getElementsByTagName("h1");
+        
+        // let Inicial = parseInt(prompt("Digite o valor inicial:"));
+        // let Final = parseInt(prompt("Digite o valor final:"));
+        // let Incremento = parseInt(prompt("Digite o valor do incremento:"));
+
+        
+        //     for(let cont=Inicial; cont<=Final; cont+=Incremento) {
+        //         ArrayH1[0].innerHTML += ("<li> Contador => " + cont + "</li>");
+        //     }
+        
+
+        
+        //EXEMPLO USANDO O PROMPT PARA DEFINIR A QUANTIDADE DE LINHAS E ADICONANDO UM * A CADA LINHA
+
+        // let qtlinhas = parseInt(prompt('Defina a quantidade de linhas'))
+        // for(let linha=1; linha<=qtlinhas;linha++){
+        //     console.log('*' .repeat(linha));
+        // }
+
+
+        //  Aula 5 ARRAY
+        // Array - ele é mutável, ou seja, conseguimos, por exemplo, adicionar valores a ele depois de criado.
+        // EXEMPLO 1
+        //VARIAVEL COMPOSTA COM INDICE DE 0 A 3, LOGO EM SEGUIDA PERGUNTANDO QUAL NUMERO TA NA POSIÇÃO 3 E UM CONSOLE USANDO NUM.LENGTH PARA MOSTRAR O TAMANHO
+
+        // let num = [1,8,7]
+        // num [3] = 9
+        // console.log (`O vetor tem ${num.length} posições`) 
+
+        // EXEMPLO 2
+        //VARIAVEL COMPOSTA, COM STRING, NUMBERS.
+        //PUSH - ADICIONA O VALOR AO FINAL.
+        //DELETE - irá excluir determinado elemento, entretanto, esse comando não altera o tamanho do array, ou seja, o elemento é excluído, entretanto, o índice continua existindo. É como se tivéssemos uma vaga vazia.
+        //POP - remove o último elemento do array, e esse comando sim, altera o tamanho do array, ou seja, ele exclui o elemento e também exclui a "vaga".
+        //SORT - COLOCA OS ELEMENTOS EM ORDEM CRESCENTE.
+
+        // let Array = [ "Isabela", 51 , "Leticia", 1 , 8 , "Bicicleta" , 9 , 4]
+        // Array.push("Ana")
+        // delete Array [9]
+        // Array.pop()
+        // Array.sort()
+        // console.log (Array)
+        // console.log (`O Array tem ${Array.length} posições`)
+
+        //EXERCICIO 1 - 5 numeros
+
+        // let num = [1,5,3,9,8]
+        // console.log(num)
+
+        //EXERCIO 2 - 10 numeros em ordem crescente
+
+        let num = [99,85,43,93,21,78,90,54,62,21]
+        // num.sort()
+        num.splice(6,1,33) //splice ex.: a partir da posição 6, ele elimina o numero da posição 6 e substitui pelo 11. O número 1 é a quantidade de itens que desejo excluir após o indice.
+        console.log(num)
+    </script>
+</body>
+</html>
