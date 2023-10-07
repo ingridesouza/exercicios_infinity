@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trampos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+</head>
+<!-- FLEX WRAP NO BODY PARA QUANDO A TELA DIMINUIR, O CONTEUDO "QUEBRAR" -->
+<body class="flex-wrap bg-light">
+   <!-- CRIAÇÃO DO CABEÇALHO -->
+    <header>
+        <!-- BARRA DE NAVEGAÇÃO -->
+        <nav class="navbar navbar-expand-lg backgroundnav ">
+            <div class="container-fluid">
+              
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ml-1 text-light ">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="#">Vagas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="#">Cursos</a>
+                  </li>
+                  
+                  <!-- BOTÕES SUSPENSOS USANDO O DROPDOWN -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Candidato
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-light" href="#">Destaque o seu perfil</a></li>
+                      <li><a class="dropdown-item text-light" href="#">Tutano</a></li>
+                      <li><a class="dropdown-item text-light" href="#">Perguntas Frequentes</a></li>
+                    </ul>
+                  </li>
+                  <!-- BOTÃO DROPDOWN COM DIVISÓRIA -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Quero Contratar
+                    </a>
+                    <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-light" href="#">Plataforma de Recrutamento (SaaS)</a></li>
+                      <li><a class="dropdown-item text-light" href="#">Preços e Planos</a></li>
+                      <li><hr class="dropdown-divider text-light"></li>
+                      <li><a class="dropdown-item text-light" href="#">trampos Hunting (RPO)</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Entrar
+                    </a>
+                    <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-light" href="#">Recrutador</a></li>
+                      <li><a class="dropdown-item text-light" href="#">Candidato</a></li>
+                      
+                    </ul>
+                  </li>
+              </div>
+            </div>
+          </nav>
+      </header>
+    
+      <!-- SECTION COM FLEX-COLUMN PARA OS ITENS FICAREM EM COLUNAS -->
+    <section class="flex-column text-white fundo backgroundsection1">
+      
+      <!-- CRIEI UMA DIV PARA SEPARAR O TEXTO DAS IMAGENS, USEI O DISPLAY FLEX PARA COLOCA-LOS UM DO LADO DO OUTRO, JUSTIFY CONTENT CENTER - PARA DEIXA-LOS NO CENTRO, JUNTO COM O ALIGN ITEMS CENTER | PARA DEIXA-LOS ALINHADOS NO CENTRO E TBM USEI UM GAP DE 5 PARA SEPARAR O NOME PRINCIPAL DA FRASE -->
+      <div class="p-3 mb-2 text-white d-flex justify-content-center gap-5 align-items-center d-grid ">
+        
+        <!-- A CLASSE "FONTE" É UMA CLASSE MINHA DO CSS PARA ESTILIZAR OQ NÃO TEM NO BOOSTSTRAP  -->
+        <h1 class="display-2 fonte" id=fontetrampos>trampos</h1>
+        <p class="lead"><strong>A plataforma completa de recrutamento que reúne os <br>profissionais do futuro às carreiras do amanhã.</strong></p>
+    </div>
+    
+    <!-- DENTRO DA MESMA SECTION EU CRIEI OUTRA DIV PARA COLOCAR AS IMAGENS, USEI O DISPLAY FLEX PARA COLOCA-LOS NA MESMA LINHA, UM DO LADO DO OUTR, USEI O JUSTIFY CONTENT CENTER PARA DEIXA-LOS NO CENTRO - E UM GAP DE 5 PARA SEPARAR AS IMAGENS UMA DAS OUTRAS -->
+    <div class="d-flex justify-content-center gap-5"> 
+      <!-- FIZ A PAGINA DO CADASTRO USANDO FORMULARIO -->
+      <a href="file:///d%3A/Area%20de%20Trabalho/Projects/Trampos/cadastro.html?#"> <img class="rounded margem" src="assets/images/procuro vagas.png" alt=""></a>
+      <!-- A PAGINA DO RECRUTAMENTO ESTA COM O LINK DA PAGINA DA TRAMPOS  -->
+      <a href="https://trampos.co/recrutamento"><img class="rounded margem" src="assets/images/recrutamento.png" alt=""></a>
+    </div>
+    </section>
+    
+    <!-- CRIEI OUTRA SECTION PARA A SEGUNDA PARTE DO SITE, COM ALGUMAS MARCAS QUE CONTRATAM COM A TRAMPOS, POREM NÃO CONSEGUI FAZER O CARROSEL. USE MARGIN TOP PARA DAR ESPAÇAMENTO ENTRE UMA SECTION E OUTRA, FLEX COLUMN NA SECTION PARA OS ITENS FICAREM UM EMBAIXO DO OUTRO EM COLUNA, JUSTIFY CONTENT CENTER E ALIGN ITEMS CENTER PARA DEIXA-LOS ALINHADOS AO CENTRO -->
+    <section class="mt-5 d-flex flex-column justify-content-center align-items-center">
+      <!-- USEI UMA CLASSE MINHA NO CSS PARA ESTILIZAR O P -->
+      <p class="fonteperfis">PERFIS E MARCAS QUE SE ATRAEM</p>
+      <!-- USEI MARGEM BOTTON PARA DAR ESPACAMENTO ENTRE O H1 E AS FOTOS LOGO ABAIXO -->
+      <h1 class="fonte mb-5">Veja quem contrata com a gente</h1>
+      <!-- COLOQUEI O DISPLAY FLEX E SEPAREI ELAS COM O GAP -->
+      <div class="d-flex gap-5 justify-content-center align-items-center">
+        <img class="logos" src="assets/images/mccann.png" alt="">
+        <img class="logos" src="assets/images/amplify.png" alt="">
+        <img class="logos" src="assets/images/smartfit.png" alt="">
+        <img class="logos" src="assets/images/mynd.png" alt="">
+        <img class="logos" src="assets/images/vmly&r.png" alt="">
+        <img class="logos" src="assets/images/infracommerce.png" alt="">
+      </div>
+    </section>
+    <!-- CRIEI UMA NOVA SECTION, SENDO A TERCEIRA DO SITE, NA QUAL MOSTRA ALGUNS CURSOS DA TRAMPOS, AS IMAGENS EU PREFERI FAZER PELO CANVA E DEPOIS COLOCAR NO SITE -->
+    <section class="backgroundsection2 text-light d-flex align-items-center justify-content-center">
+      <div class="text-white flex-column">
+            <!-- USEI DISPLAY-2 PARA DEFINIR O TAMANHO DA PALAVRA TRAMPOS E TAMBEM DE ACADEMY -->
+          <h1 class="display-2 fonte tamanho">trampos</h1>
+          <h2 class="display-2 lead academy tamanho">ACADEMY</h2>
+
+        <div class="flex-column justify-content-center fonte">
+          <p><b>Sua jornada é você quem faz</b></p>
+          <p>trampos ACADEMY seleciona e produz cursos a partir <br> das principais habilidades que o mercado procura no <br> momento. Aprenda no ritmo de quem contrata.</p>
+          <p>De forma prática, eficiente e contemporânea. Quem <br> evolui durante a jornada nunca perde a relevância.</p>
+        </div>
+      </div>
+       
+      <!-- ADICIONEI A MARGEM TOP, PADDING E MARGIN BOTTON PARA POSICIONA-LOS -->
+      <div class="mt-5 p-3 mb-5">
+        <!-- USEI ROUNDED EM TODAS AS IMAGENS PARA DEIXAR AS PONTAS ARREDONDADAS -->
+        <a href="https://trampos.academy/cursos/jornalismo-dados-online/?utm_medium=banner&utm_source=trampos.co&utm_campaign=jd&utm_content=proximos%20cursos"><img class="rounded" src="assets/images/Jornalismo de Dados.png" alt=""></a>
+        <a href="https://trampos.academy/cursos/inteligencia-artificial-para-marcas-agencias/?utm_medium=banner&utm_source=trampos.co&utm_campaign=ia&utm_content=proximos+cursos"><img class="rounded" src="assets/images/Inteligencia Artificial.png" alt=""></a>
+        <a href="https://trampos.academy/cursos/curso-gestao-de-projetos-online/?utm_medium=banner&utm_source=trampos.co&utm_campaign=gpon&utm_content=proximos%20cursos"><img class="rounded" src="assets/images/gestao.png" alt=""></a>
+      </div>
+    </section>
+      <!-- ESSE ERA PRA SER O CAROSSEL, PORÉM INFELIZMENTE EU NÃO CONSEGUI E ENTÃO COLOQUEI APENAS 3 IMAGENS FEITAS POR MIM, TENTEI DEIXAR O MAIS PARECIDO POSSIVEL, E COLOQUEI UMA DO LADO DA OUTRA -->
+      <!-- <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          
+          <div class="carousel-inner">
+      
+            <div class="item active">
+              <img src="assets/images/Jornalismo de Dados.png" alt="">
+              <div class="carousel-caption">
+                <h1>Jornalismo de Dados</h1>
+              </div>
+            </div>
+      
+            <div class="item">
+              <img src="assets/images/Inteligencia Artificial.png" alt="">
+              <div class="carousel-caption">
+                <h1>Inteligencia Artificial</h1>
+              </div>
+            </div>
+          
+            <div class="item">
+              <img src="assets/images/gestao.png" alt="">
+              <div class="carousel-caption">
+                <h1>Gestão</h1>
+              </div>
+            </div>
+        
+          </div>
+      
+          
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div> -->
+      
+      <section class="bg-light">
+        <div class="text-center p-5">
+          <p class="fonteperfis">VAGAS</p>
+          <h1 class="fonte">Um pouco das nossas vagas</h1>
+        </div>
+
+        <!-- UMA DIV USANDO CONTAINER, DENTRO DESSA DIV EU CRIEI UMA NOVA DIV, PARA SEPARAR AS FOTOS, DEIXEI 4 EM CADA DIV, ASSIM CONSEGUI ORGANIZAR MELHOR. POSICIONEI E SEPAREI ELAS USANDO O JUSTIFY CONTENT CENTER, ALING ITEMS CENTER E O GAP -->
+        <div class="container">
+          <!-- TODOS OS LINKS SÃO PARA AS PAGINAS DO SITE DA TRAMPOS  -->
+         <div class="d-flex gap-4 justify-content-center align-items-center">
+          <a href="https://trampos.co/oportunidades/754267-especialista-de-trafego-seo"><img class="rounded gap-2" src="assets/images/parcela.png" alt=""></a>
+          <a href="https://trampos.co/oportunidades/752211-customer-success"><img class="rounded" src="assets/images/trampos.png" alt=""></a>
+          <a href="https://trampos.co/oportunidades/754664-vendedor-a-pleno-consultor-a-de-vendas"><img class="rounded" src="assets/images/massimus.png" alt=""></a>
+          <a href="https://trampos.co/oportunidades/754625-closer"><img class="rounded" src="assets/images/rp.png" alt=""></a>
+         </div>
+          <!-- TODOS OS LINKS SÃO PARA AS PAGINAS DO SITE DA TRAMPOS  -->
+          <div class="d-flex gap-4 mt-4 mb-4 justify-content-center align-items-center>
+            <a href="https://trampos.co/oportunidades/754589-assistente-financeiro"><img class="rounded" src="assets/images/social tailos.png" alt=""></a>
+            <a href="https://trampos.co/oportunidades/754123-motion-designer"><img class="rounded" src="assets/images/confidencial.png" alt=""></a>
+            <a href="https://trampos.co/oportunidades/754366-growth-outreach-marketing-associate"><img class="rounded" src="assets/images/growth.png" alt=""></a>
+            <a href="https://trampos.co/oportunidades/753743-social-media"><img class="rounded" src="assets/images/mop.png" alt=""></a>
+          </div>
+        </div>
+      </section>
+     <!-- RODAPÉ -->
+
+    <footer class="text-center text-lg-start bg-dark text-light p-4">
+    
+      <section>
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <!-- COLOQUEI A QUANTIDADE DE COLUNAS POR TAMANHO DE TELA -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- TITULO DA PRIMEIRA COLUNA  -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Trampos
+              </h6>
+              <!-- OPCOES DA PRIMEIRA COLUNA  -->
+              <p>
+                COMO FUNCIONA
+              </p>
+              <p>
+                CAESAR
+              </p>
+              <p>
+                CADASTRE-SE
+              </p>
+              
+            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- TITULO DA SEGUNDA COLUNA  -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                    Candidatos
+                  </h6>
+                  <!-- OPCOES DA SEGUNDA COLUNA  -->
+                  <p>
+                    PROCURE VAGAS
+                  </p>
+                  <p>
+                    DESTAQUE SEU PERFIL
+                  </p>
+                  <p>
+                    CURSOS
+                  </p>
+                  <p>
+                    CADASTRE-SE
+                  </p>
+                  
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- TITULO DA TERCEIRA COLUNA  -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                        A TRAMPos.co 
+                      </h6>
+                      <!-- OPCOES DA TERCEIRA COLUNA  -->
+                      <p>
+                        CENTRAL DE AJUDA
+                      </p>
+                      <p>
+                        SOBRE
+                      </p>
+                      <p>
+                        TUTANO
+                      </p>
+                      <p>
+                        TRABALHE CONOSCO
+                      </p>
+                      <p>
+                        CONTATO
+                      </p>
+                      
+                    </div>
+            
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- TITULO DA QUARTA COLUNA  -->
+              <h6 class="text-uppercase fw-bold mb-4">SIGA-NOS!</h6>
+              <!-- IMAGEM REFERENTE AS REDES SOCIAIS  -->
+              <p><img class="redes" src="assets/images/redessociais.png" alt=""></p>
+            </div>
+          </div>
+      </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 trampos — Termos de uso • Politica de privacidade • Política de cookies • LGPD
+      </div>
+    </footer>
+     <!-- SCRIPT  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

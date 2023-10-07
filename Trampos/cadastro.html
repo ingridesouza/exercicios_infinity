@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-light">
+    <!-- CRIAÇÃO DO CABEÇALHO -->
+    <header>
+        <!-- BARRA DE NAVEGAÇÃO -->
+        <nav class="navbar navbar-expand-lg backgroundnav2">
+            <div class="container-fluid">
+            <!-- FIZ A BARRA DE NAVEGAÇÃO NO MESMO ESTILO DA PAGINA PRINCIPAL -->
+                <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand fontecadasdatro" href="file:///d%3A/Area%20de%20Trabalho/Projects/Trampos/index.html#">TRAMPOS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ml-1 fontecadasdatro">
+                  <li class="nav-item">
+                    <a class="nav-link fontecadasdatro" aria-current="page" href="#">SOBRE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fontecadasdatro" aria-current="page" href="#">RECRUTADOR</a>
+                  </li>
+                  
+                  <!-- BOTÃO SUSPENSO USANDO O DROPDOWN -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fontecadasdatro" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      ENTRAR
+                    </a>
+                    <ul class="dropdown-menu backgroundnav2" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">CANDIDATO</a></li>
+                      <li><a class="dropdown-item" href="#">RECRUTADOR</a></li>
+                    </ul>
+                  </li>
+              </div>
+            </div>
+          </nav>
+      </header>
+
+      <!-- CRIEI UMA SECTION PARA DAR INICIO AO FORMULARIO  -->
+      <section>
+        <h1 class="d-flex align-items-center justify-content-center mt-5 fonte2 mb-4">Cadrastro de Candidato</h1>
+        <div class="bg-white d-grid align-items-center justify-content-center ">
+            
+                <form>
+                    <!-- PARA O FORMULÁRIO EU COMECEI COM A TAG FORM DE FORMULÁRIO, E A CADA ITEM DO FORMULARIO EU USEI A TAG LABEL, E O INPUT TYPE PARA DEFINIR O TIPO DE DADO  -->
+                    <label class="mt-4"> Nome Social*
+                        <input type="text"/>
+                    </label>
+                    
+                    <label class="mt-4"> Sobrenome*
+                       <input type="text">
+                    </label> <table></table>
+
+                    <!-- NESSE ITEM EU UTILIZEI O SELECT, PARA APARECER O MENU DE OPCOES E A TAG OPTION PARA CADA OPÇÃO -->
+                    <label class="mt-4"> Identidade de Genero*
+                        <select>
+                            <option value="">--selecione</option>
+                            <option>HOMEM</option>
+                            <option>MULHER</option>
+                            <option>MULHER TRANS</option>
+                            <option>HOMEM TRANS</option>
+                            <option>NÃO BINÁRIO</option>
+                            <option>PREFIRO NÃO DESCREVER</option>
+                          </select>
+                     </label> <Table></Table>
+                    
+                    <label class="mt-4"> Data de Nascimento*
+                      <input type="date">
+                    </label>
+
+                    <label class="mt-4"> CPF*
+                        <input type="text">
+                      </label> <table></table>
+
+                    <label class="mt-4"> Cidade*
+                      <input type="text">
+                    </label>
+
+                    <label class="mt-4"> Estado*
+                        <input type="text">
+                    </label> <table></table>
+
+                    <label class="mt-4"> Celular
+                        <input type="tel">
+                      </label> <table></table>
+            
+                    <label class="mt-4"> Qual é o seu email?*
+                      <input type="email">
+                    </label> <table></table>
+
+                    <label class="mt-4"> Pode repetir o seu email?
+                      <input type="email">
+                    </label> <table></table>
+
+                    <label class="mt-4"> Senha*
+                      <input type="password">
+                    </label> <table></table>
+
+                    <label class="mt-4"> Pode repetir a senha?
+                      <input type="password">
+                    </label> <table></table>
+                    
+                    <p class="align-items-center mt-5">Para se cadastrar, você precisa concordar com os termos de uso e política de privacidade do trampos.co.</p>
+
+                    <!-- UTILIZEI O checkbox PARA FAZER O QUADRADINHO DE OPÇÃO  -->
+                    <input type="checkbox" name="termos"/> <label>Li e concordo com os <a href="https://trampos.co/legal/termos-uso-condicoes-legais">Termos de Uso.</a></label><br>
+                    <input type="checkbox" name="termos"/> <label>Li e concordo com a <a href="https://trampos.co/legal/politica-privacidade">Política de Privacidade</a></label><br>
+
+                    <!-- E POR FIM COLOQUEI DOIS BOTÕES, UM BOTÃO DE ALERTA, APARECENDO UMA MENSAGEM NA TELA E OUTRO DE SUBMIT, PARA O FORMULÁRIO SER ENVIADO  -->
+                    <button class="mt-4" onclick="alert('Cadastrando...')">CADASTRAR</button>
+                    <input class="mb-4" type="submit"/>
+                </form>        
+        </div>
+      </section>
+
+      <footer class="text-center text-lg-start bg-secondary text-light p-4">
+    
+        <section>
+          <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+              <!-- COLOQUEI A QUANTIDADE DE COLUNAS POR TAMANHO DE TELA -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- TITULO DA PRIMEIRA COLUNA  -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Trampos
+                </h6>
+                <!-- OPCOES DA PRIMEIRA COLUNA  -->
+                <p>
+                  COMO FUNCIONA
+                </p>
+                <p>
+                  CAESAR
+                </p>
+                <p>
+                  CADASTRE-SE
+                </p>
+                
+              </div>
+  
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- TITULO DA SEGUNDA COLUNA  -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                      Candidatos
+                    </h6>
+                    <!-- OPCOES DA SEGUNDA COLUNA  -->
+                    <p>
+                      PROCURE VAGAS
+                    </p>
+                    <p>
+                      DESTAQUE SEU PERFIL
+                    </p>
+                    <p>
+                      CURSOS
+                    </p>
+                    <p>
+                      CADASTRE-SE
+                    </p>
+                    
+                  </div>
+  
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- TITULO DA TERCEIRA COLUNA  -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                          A TRAMPos.co 
+                        </h6>
+                        <!-- OPCOES DA TERCEIRA COLUNA  -->
+                        <p>
+                          CENTRAL DE AJUDA
+                        </p>
+                        <p>
+                          SOBRE
+                        </p>
+                        <p>
+                          TUTANO
+                        </p>
+                        <p>
+                          TRABALHE CONOSCO
+                        </p>
+                        <p>
+                          CONTATO
+                        </p>
+                        
+                      </div>
+              
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- TITULO DA QUARTA COLUNA  -->
+                <h6 class="text-uppercase fw-bold mb-4">SIGA-NOS!</h6>
+                <!-- IMAGEM REFERENTE AS REDES SOCIAIS  -->
+                <p><img class="redes" src="assets/images/redessociais.png" alt=""></p>
+              </div>
+            </div>
+        </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2023 trampos — Termos de uso • Politica de privacidade • Política de cookies • LGPD
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

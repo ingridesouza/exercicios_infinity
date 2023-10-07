@@ -1,0 +1,63 @@
+#fontetrampos{
+    font-family: 'Dosis', sans-serif;
+}
+
+.backgroundnav{
+    background-color: rgb(28, 16, 50);
+}
+.backgroundsection1{
+    background-color: rgb(44, 20, 88);
+}
+.backgroundsection2{
+    background-color: rgb(44, 20, 88);
+}
+.fonte{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+.imagem2{
+    width: 20vh;
+    height: 20vh;
+}
+.margem{
+    margin-bottom: 5vh;
+}
+.alinhamento{
+    margin-right:10px
+}
+.fundo{
+    height: 490px;
+}
+.academy{
+    font-family: 'Courier New', Courier, monospace;
+}
+.tamanho{
+    font-size: 10vh;
+}
+.logos{
+    width: 10%;
+    height: 10%;
+}
+.fonteperfis{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.redes{
+    width: 20%;
+    height: 20%;
+}
+.backgroundnav2{
+    background-color: rgb(180, 225, 237);
+}
+.fontecadasdatro{
+    color: rgb(0, 0, 238);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.fonte2{
+    font-family: 'Times New Roman', Times, serif;
+}
+.fundo2{
+    width: 800px;
+    height: 1366px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
