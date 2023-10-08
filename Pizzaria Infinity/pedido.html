@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nome_pizzaria nome_pizzaria_pagPedido"><a href="http://127.0.0.1:5500/Pizzaria%20Infinity/index.html">Italian Pizza</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="formulario_pedido">
+            <form>
+
+                    <legend class="SEUPEDIDO_centro">SEU PEDIDO</legend>
+
+                <p>
+                    <label> Nome:
+                        <input type="text"/>
+                    </label><br> 
+                </p>
+        
+               <p>
+                   <label> Telefone para contato:
+                      <input type="tel">
+                    </label><br>
+               </p>
+                
+               <p>
+                   <label>Endereço:
+                       <input type="text">
+                   <label><br>
+               </p>
+    
+               <p>
+                 <label>Tamanho:
+                 <select>
+                    <option value="">--selecione</option>
+                    <option>Pequena - 1 sabor</option>
+                    <option>Média - 2 sabores</option>
+                    <option>Grande - 3 sabores</option>
+                    <option>Familia - 4 sabores</option>
+                 </select>
+                </label>
+               </p>
+
+               <fieldset>
+                <legend>Escolha os sabores:</legend>
+                <input type="checkbox" name="sabor"/> <label>Frango com Catupiry</label><br>
+                <input type="checkbox" name="sabor"/> <label>Pizza Marguerita</label><br>
+                <input type="checkbox" name="sabor"/> <label>Pizza de Atum com Cebola</label><br>
+                <input type="checkbox" name="sabor"/> <label>Pizza de Nutella com Morango</label><br>
+                <input type="checkbox" name="sabor"/> <label>Pizza de M&M com brigadeiro</label><br>
+                <input type="checkbox" name="sabor"/> <label>Pizza de Abacaxi com Camarão</label><br>
+                <input type="checkbox" name="genero"/> <label>Calabresa</label>   
+    
+            </fieldset>
+
+               <p>
+                   <label> Forma de Retirada
+                      <select>
+                        <option value="">--Por favor selecione</option>
+                        <option>Delivery</option>
+                        <option>Retirada na Loja</option>
+                      </select>
+                   </label><br>
+               </p>
+               
+               <p><button onclick="alert('Confirmando...')">Confirmar Pedido</button><br></p>
+                <p><button type="reset">Cancelar</button><br></p>
+            </form>
+        </div>
+        
+           
+    </main>
+</body>
+</html>

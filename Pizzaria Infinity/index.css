@@ -2,100 +2,153 @@
 
     } */
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #991919;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  li {
-    display: inline;
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: #bb3030;
-  }
-
-  .img_logo{
-    width: 20%;
-    height: 30%;
-  }
-
-  .logo_pizza{
-    display: flex;
-    justify-content: center;
-    margin-top: 2vh;
-  }
-
-  .nome_pizzaria{
-    font-family: 'Allura', cursive;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #991919;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     
-  }
+    li {
+      display: inline;
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #bb3030;
+    }
   
-  .titulos_pizzaria{
-    text-align: center;
-  }
-
-  .texto_destaque{
-    background-color: #991919;
-    color: white;
-  }
-  .nome_destaque{
-    margin: 15px;
-    font-family: 'Times New Roman', Times, serif;
-  }
-  .sessao_cardapio{
-    background-color: #991919;
-    color: white;
-  }
-  .nome_cardapio{
-    font-size: 30px;
-    margin: 15px;
-    padding-top: 30px;
-  }
-  .sessao_destaque{
-    display: flex;
-    flex-direction: column;
-  }
-  .imagens_destaque{
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-
-  .configuracao_banner_pizza{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
-  }
-  .configuracoes_sabores_pizza{
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    width: 250px;
-    height: 300px;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 25%;
-    margin-bottom: 30px;
-  }
+    .img_logo{
+      width: 20%;
+      height: 30%;
+    }
   
+    .logo_pizza{
+      display: flex;
+      justify-content: center;
+      margin-top: 2vh;
+    }
+  
+    .nome_pizzaria{
+      font-family: 'Allura', cursive;
+      
+    }
+    
+    .titulos_pizzaria{
+      text-align: center;
+    }
+  
+    .texto_destaque{
+      background-color: #991919;
+      color: white;
+    }
+    .nome_destaque{
+      margin: 15px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .sessao_cardapio{
+      background-color: #991919;
+      color: white;
+    }
+    .nome_cardapio{
+      font-size: 30px;
+      margin: 15px;
+      padding-top: 30px;
+    }
+    .sessao_destaque{
+      display: flex;
+      flex-direction: column;
+    }
+    .imagens_destaque{
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .configuracao_banner_pizza{
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+    }
+    .configuracoes_sabores_pizza{
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      width: 250px;
+      height: 300px;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10%;
+      margin-bottom: 30px;
+    }
+  
+    .footer{
+      display: flex;
+      justify-content: space-around;
+      gap: 5vh;
+      color: #3b3b3b;
+      background-color: #7c7878;
+    }
+    
+    .informacoes_footer{
+      display: flex;
+      flex-direction: column;
+    }
+    .nomes_footer{
+      display: flex;
+      justify-content: center;
+      color: #3b3b3b;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  
+  
+  
+  
+    .nome_pizzaria_pagPedido{
+      font-size: 30px;
+    }
+  
+    .formulario_pedido{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      background-color: #991919;
+      color: white; 
+      width: 300px;
+      padding: 25px;
+    }
+  
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .SEUPEDIDO_centro{
+      display: flex;
+      justify-content: center;
+    }
+  
+  
+  
+  
+  
+    
