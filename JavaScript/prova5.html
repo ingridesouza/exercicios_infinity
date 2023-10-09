@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+   <link rel="stylesheet" href="prova5.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Gerenciador de Tarefas Domesticas</h1>
+        <input type="text" id="tarefa" placeholder="Adicionar nova tarefa">
+        <button onclick="adicionarTarefa()">Adicionar</button>
+        <ul id="listaTarefas"></ul>
+    </div>
+    <script>
+        const tarefas = [];
+
+        function adicionarTarefa() {
+            const tarefa = document.getElementById("tarefa").value;
+            if (tarefa.trim() !== "") {
+                tarefas.push(tarefa);
+                atualizarListaTarefas();
+                document.getElementById("tarefa").value = "";
+            }
+        }
+        
+
+        function atualizarListaTarefas() {
+            const listaTarefas = document.getElementById("listaTarefas");
+            listaTarefas.innerHTML = "";
+            tarefas.forEach((tarefa, indice) => {
+                const itemLista = document.createElement("li");
+                itemLista.innerHTML = `
+                    ${tarefa}
+                    <button onclick="removerTarefa(${indice})">Remover</button>
+                `;
+                listaTarefas.appendChild(itemLista);
+            });
+        }
+
+        function removerTarefa(indice) {
+            tarefas.splice(indice, 1);
+            atualizarListaTarefas();
+        }
+    </script>
+</body>
+</html>
