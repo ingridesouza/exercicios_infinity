@@ -1,0 +1,44 @@
+<!-- Programa que pede o nome, altura e peso ao usuário, logo após converte a altura para metros e calcula a formula do IMC. Usando as condicoinais e operadores de comparação, ele classifica o usuário em qual nível ele está e exibe no console. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nome = prompt("Digite seu nome:");
+        let altura_centimetros = parseFloat(prompt("Digite sua altura em centímetros:"));
+        let peso = parseFloat(prompt("Digite seu peso:"));
+
+        let altura_metros = altura_centimetros / 100;
+
+        let imc = peso / (altura_metros * altura_metros);
+
+        let classificacao = "";
+        if (imc < 16) {
+            classificacao = "Baixo peso muito grave";
+        } else if (imc >= 16 && imc <= 16.99) {
+            classificacao = "Baixo peso grave";
+        } else if (imc >= 17 && imc <= 18.49) {
+            classificacao = "Baixo peso";
+        } else if (imc >= 18.50 && imc <= 24.99) {
+            classificacao = "Peso normal";
+        } else if (imc >= 25 && imc <= 29.99) {
+            classificacao = "Sobrepeso";
+        } else if (imc >= 30 && imc <= 34.99) {
+            classificacao = "Obesidade grau I";
+        } else if (imc >= 35 && imc <= 39.99) {
+            classificacao = "Obesidade grau II";
+        } else {
+            classificacao = "Obesidade grau III";
+        }
+        console.log(`Nome: ${nome}`);
+        console.log(`IMC: ${imc}`);
+        console.log(`Classificação: ${classificacao}`);
+
+    </script>
+</body>
+</html>
