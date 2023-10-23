@@ -4,36 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizzaria</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body_pagPrincipal">
     <header class="header">
         
         <nav>
-            <ul>
-                <li>
-                    <a href="file:///d%3A/Area%20de%20Trabalho/Projects/Exercicios_infinity/Pizzaria%20Infinity/pedido.html">Faça seu pedido</a>
+            <ul class="ul_header">
+                <li class="li_header">
+                    <a class="a_li_header" href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">Áreas de Entrega</a>
+                    <a class="a_li_header" href="cardapio">Cardápio</a>
                 </li>
                 <li>
-                    <a href="#">Fale Conosco</a>
+                    <a class="a_li_header" href="./pedido.html">Faça seu pedido</a>
+                </li>
+                <li>
+                    <a class="a_li_header" href="#">Contato</a>
                 </li>
             </ul>
         </nav>
-        <div class="logo_pizza">
-            <img class="img_logo" src="images/logo_pizza.png" alt="logo_pizza" width="120px" height="120px">
-        </div>
-        <div class="titulos_pizzaria">
-            <h1 class="nome_pizzaria">Italian Pizzaria</h1>
-            <p>Pizza artesanal de receita única, massa fina, crocante e de sabor incomparável!</p>
-        </div>
+        
+        <section class="section_header">
+            <div class="logo_pizza">
+                <img class="img_logo" src="images/logo_pizza.png" alt="logo_pizza" width="120px" height="120px">
+            </div>
+            <div class="titulos_pizzaria">
+                <h1 class="nome_pizzaria">Italian Pizzaria</h1>
+                <p>Pizza artesanal de receita única, massa fina, crocante e de sabor incomparável!</p>
+            </div>
+        </section>
 
     </header>
+
+    <section id="home">
+
+    </section>
+    <section id="cardapio" class="wrapper">
+        <header>
+            <h2>Cardápio</h2>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Nome</th>
+                    <th rowspan="2">Descrição</th>
+                    <th colspan="4">Preço</th>
+                </tr>
+
+                <tr>
+                    <th>P</th>
+                    <th>M</th>
+                    <th>G</th>
+                    <th>F</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Camarão com Abacaxi</td>
+                    <td>Descrição</td>
+                    <td>R$ 44,90</td>
+                    <td>R$ 61,90</td>
+                    <td>R$ 74,90</td>
+                    <td>R$ 104,90</td>
+                </tr>
+                <tr>
+                    <td>Frango com Catupiry</td>
+                    <td>Descrição</td>
+                    <td>R$ 44,90</td>
+                    <td>R$ 61,90</td>
+                    <td>R$ 74,90</td>
+                    <td>R$ 104,90</td>
+                </tr>
+                <tr>
+                    <td>Marguerita</td>
+                    <td>Descrição</td>
+                    <td>R$ 44,90</td>
+                    <td>R$ 61,90</td>
+                    <td>R$ 74,90</td>
+                    <td>R$ 104,90</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contato">
+        <div>
+            <p> Telefone: <a href="tel:+5575981011035">(75) 9 8101-1035</a></p>
+        
+        <div>
+            <!-- <img src="" alt=""> redes sociais -->
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
+        </div>
+      </div>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.924535152666!2d-38.459356025754225!3d-12.976678459909719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161bfce64f7c2d%3A0x8d355fdcd1358496!2sInfinity%20School!5e0!3m2!1spt-BR!2sbr!4v1697650281480!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yK7bXIqLk9Q?si=AxAn_M9YXH3digPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+     
+    </section>
+
+    <section>
+        
+        <!-- <div class="cards">
+            <div class="card">
+                <img src="images/pizza_calabresa.png" alt="">
+                <div>
+                    <h4>Calabresa</h4>
+                    <p>Molho de tomate, queijos, calabresa, orégano.</p>
+                    <a href="#">Comprar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/pizza_calabresa.png" alt="">
+                <div>
+                    <h4>Pizza de Abacaxi com Camarão</h4>
+                    <p>Molho de tomate, queijos, camarão, abacaxi frito, queijo coalho e orégano.</p>
+                    <a href="#">Comprar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/pizza_calabresa.png" alt="">
+                <div>
+                    <h4>Calabresa</h4>
+                    <p>Molho de tomate, queijos, calabresa, orégano.</p>
+                    <a href="#">Comprar</a>
+                </div>
+            </div>
+    </section> -->
 
     <section class="sessao_destaque">
         <div class="texto_destaque">
@@ -136,8 +243,10 @@
                 </div>
               <p>Rua das Flores, Imbui, <br> Salvador, <br> CEP:12345-678</p>
             </div>
+            
+        </div>
 
-          </div>
+        &copy; Italian Pizzaria, 2023
     </footer>
 </body>
 </html>

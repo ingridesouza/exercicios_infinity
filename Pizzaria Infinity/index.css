@@ -1,71 +1,195 @@
-  /* .header{
+:root{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/* transformou 16px em 10px*/
 
+  /* overflow-y : auto; clone netflix*/
+
+    /* header_principal > div{
+      seletor de filhos diretos só pegam tags que sejam filhas diretas do elemento
     } */
-
-    ul {
-      list-style-type: none;
+    *{
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+  .body_pagPrincipal{
+    font-size: 1.6rem;
+  }
+      /* SECTION CARDAPIO */
+  #cardapio{
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0.5rem;
+  }
+  
+  #contato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+  
+  #contato iframe{
+    width: 40%;
+    border-radius: 5%;
+  }
+
+
+
+  /* .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    
+  }
+
+  .card{
+    width: 25rem;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    transition: 0.4s;
+  }
+
+  .card:hover{
+    transform: scale(1.02);
+  }
+
+   .card img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+     width: 100%;
+  }
+
+  .card a {
+    text-decoration: none;
+    background-color: #991919;
+    border: #991919;
+    padding: 0.5rem;
+  }
+
+  .card a:hover{
+    border-color: #991919;
+    color: #991919;
+    background-color: transparent;
+  } */
+
+    /* ESTRUTURAÇÃO AULA */
+    
+    /* .li_header:not(:first-of-type) {
+      border-left: 1px solid black;
+      padding: 0.5rem 1rem;
+    }
+    .header nav ul{
+      font-size: 2.4rem;
+      list-style: none;
+      display: flex;
+      gap: 5rem;
+    }
+    .header nav li{
+      padding: 0.5rem 1rem;
+    }
+    .li_header:not(:first-of-type) {
+      border-left: 1px solid black;
+      padding: 0.5rem 1rem;
+    }
+    .header nav a{
+      color: black;
+      text-decoration: none;
+      position: relative;
+    }
+    .header nav a::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      height: 1px;
+      width: 0;
+      background-color: black;
+      transition: 0.4s;
+    }
+    .header nav a:hover::after{
+      width: 100%;
+    } */
+
+
+    /* ESTILIZAÇÃO PADRÃO */
+    .ul_header {
+      list-style-type: none;
       overflow: hidden;
-      background-color: #991919;
+      background-color: yellow;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    
-    li {
-      display: inline;
-      float: left;
-    }
-    
-    li a {
+
+    .a_li_header {
       display: block;
-      color: white;
+      color: black;
       text-align: center;
-      padding: 14px 16px;
+      padding: 1.4rem 1.6rem;
       text-decoration: none;
     }
     
-    li a:hover {
-      background-color: #bb3030;
-    }
   
     .img_logo{
-      width: 20%;
-      height: 30%;
+      width: 25rem;
+      height: 25rem;
     }
   
     .logo_pizza{
       display: flex;
       justify-content: center;
-      margin-top: 2vh;
+      margin-top: 2rem;
     }
   
     .nome_pizzaria{
       font-family: 'Allura', cursive;
-      
+      text-align: center;
     }
     
+  .section_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
     .titulos_pizzaria{
-      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
   
     .texto_destaque{
-      background-color: #991919;
-      color: white;
+      background-color: yellow;
+      color: black;
     }
     .nome_destaque{
-      margin: 15px;
+      margin: 1.5rem;
       font-family: 'Times New Roman', Times, serif;
     }
     .sessao_cardapio{
-      background-color: #991919;
+      background-image: linear-gradient(to right, red , yellow);
       color: white;
     }
     .nome_cardapio{
-      font-size: 30px;
-      margin: 15px;
-      padding-top: 30px;
+      font-size: 3rem;
+      margin: 1.5rem;
+      padding-top: 3rem;
     }
     .sessao_destaque{
       display: flex;
@@ -73,36 +197,36 @@
     }
     .imagens_destaque{
       display: flex;
-      gap: 50px;
+      gap: 5rem;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
   
     .configuracao_banner_pizza{
       display: flex;
       justify-content: center;
-      gap: 50px;
-      margin-top: 30px;
+      gap: 5rem;
+      margin-top: 3rem;
     }
     .configuracoes_sabores_pizza{
       background-color: #ffffff;
       color: rgb(0, 0, 0);
-      width: 250px;
-      height: 300px;
+      width: 25rem;
+      height: 30rem;
       flex-direction: column;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 10%;
-      margin-bottom: 30px;
+      border-radius: 2rem;
+      margin-bottom: 3rem;
     }
   
     .footer{
       display: flex;
       justify-content: space-around;
-      gap: 5vh;
+      gap: 5rem;
       color: #3b3b3b;
       background-color: #7c7878;
     }
@@ -118,34 +242,66 @@
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
   
+
+   /* Página Pedido */
   
+   .body_pedido {
+    background-color: rgb(255, 255, 215);
+  }
+
+  .ul_header_pedido{
+    list-style-type: none;
+    overflow: hidden;
+    background-color:  #991919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .li_header_pedido {
+    display: inline;
+    float: left;
+  }
   
-  
-    .nome_pizzaria_pagPedido{
-      font-size: 30px;
-    }
-  
-    .formulario_pedido{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 40px;
-      background-color: #991919;
-      color: white; 
-      width: 300px;
-      padding: 25px;
-    }
-  
-    main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .SEUPEDIDO_centro{
-      display: flex;
-      justify-content: center;
-    }
+  .a_li_header_pedido {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1.4rem 1.6rem;
+    text-decoration: none;
+  }
+
+  .nome_pizzaria_pagPedido{
+    font-size: 3rem;
+  }
+
+  .formulario_pedido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    background-image: linear-gradient(to right, rgb(248, 65, 65) , rgb(255, 255, 81));
+    border-radius: 2rem;
+    color: white; 
+    width: 30rem;
+    padding: 2.5rem;
+  }
+
+
+  .header_pedido{
+    font-size: 1.6rem;
+  }
+
+  .main_pedido{
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .SEUPEDIDO_centro{
+    display: flex;
+    justify-content: center;
+  }
   
   
   

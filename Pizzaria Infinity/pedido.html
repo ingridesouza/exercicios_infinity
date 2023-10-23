@@ -6,52 +6,56 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <header>
+<body class="body_pedido">
+    <header class="header_pedido">
         <nav>
-            <ul>
-                <li class="nome_pizzaria nome_pizzaria_pagPedido"><a href="http://127.0.0.1:5500/Pizzaria%20Infinity/index.html">Italian Pizza</a></li>
+            <ul class="ul_header_pedido">
+                <li class="nome_pizzaria_pagPedido li_header_pedido"><a class="a_li_header_pedido" href="index.html">Italian Pizza</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main_pedido">
 
         <div class="formulario_pedido">
             <form>
-
                     <legend class="SEUPEDIDO_centro">SEU PEDIDO</legend>
-                    <hr>
+                    <hr><br>
 
-                <p>
-                    <label> Nome:
-                        <input type="text"/>
-                    </label><br> 
-                </p>
+                <div>
+                    <label for="nome">Nome:</label>
+                        <input id="nome" type="text" placeholder="Digite seu nome..."/> 
+                </div>
         
-               <p>
-                   <label> Telefone para contato:
-                      <input type="tel">
-                    </label><br>
-               </p>
-                
+               <div>
+                   <label for="telefone"> Telefone: </label>
+                      <input id="telefone" type="tel" placeholder="Telefone">
+                    <br>
+                </div>
+
+                <div>
+                    <label for="endereco"> Endereço: </label>
+                       <input id="endereco" type="text" placeholder="endereco">
+                     <br>
+                 </div>
+<!--                 
                <p>
                    <label>Endereço:
                        <input type="text">
                    <label><br>
                </p>
-    
+     -->
                <p>
-                 <label>Tamanho:
-                 <select>
+                 <label for="sabor_pizza">Tamanho:</label>
+                 <select id="sabor_pizza">
                     <option value="">--selecione</option>
-                    <option>Pequena - 1 sabor</option>
-                    <option>Média - 2 sabores</option>
-                    <option>Grande - 3 sabores</option>
-                    <option>Familia - 4 sabores</option>
+                    <option>Frango com Catupiry</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
                  </select>
-                </label>
-               </p>
-
+                
+               </p><br>
+<!-- 
                <fieldset>
                 <legend>Escolha os sabores:</legend>
                 <input type="checkbox" name="sabor"/> <label>Frango com Catupiry</label><br>
@@ -62,7 +66,7 @@
                 <input type="checkbox" name="sabor"/> <label>Pizza de Abacaxi com Camarão</label><br>
                 <input type="checkbox" name="genero"/> <label>Calabresa</label>   
     
-            </fieldset>
+            </fieldset><br> -->
 
                <p>
                    <label> Forma de Retirada
@@ -71,11 +75,11 @@
                         <option>Delivery</option>
                         <option>Retirada na Loja</option>
                       </select>
-                   </label><br>
-               </p>
+                   </label>
+               </p><br>
                
-               <p><button onclick="alert('Pedido Finalizado')">Confirmar Pedido</button><br></p>
-                <p><button type="reset">Cancelar</button><br></p>
+               <p><button onclick="alert('Pedido Finalizado')">Confirmar Pedido</button></p><br>
+                <p><button type="reset">Cancelar</button></p>
             </form>
         </div>
         
