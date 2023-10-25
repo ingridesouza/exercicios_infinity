@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Video Aula, 24/10</title>
+    <style>
+        body{
+            background-color: rgba(236, 226, 210, 0.664);
+            color: white;
+            
+        }
+        section{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(223, 192, 108);
+            border-radius: 1rem;
+            box-shadow: 10px 5px 5px gray;
+        }
+
+        .div_exemplo{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background-color: rgb(165, 147, 88);
+            width: 20rem;
+            height: 7rem;
+            color: rgb(255, 255, 255);
+            border-radius: 1rem;
+            box-shadow: 10px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>Aula DOM</h1>
+        <p>Testando os métodos do DOM</p>
+        <p>Vamos <strong>Aprender!</strong></p>
+      <div class="div_exemplo">
+        <h2 id="msg">Módulo 1</h2>
+        <div name="pink">Introdução ao DOM</div>
+      </div>
+        
+    </section>
+
+    <script>
+        const modulo1 = window.document.getElementById('msg') //chamei pelo id
+        modulo1.style.color = 'purple' //troquei a cor do texto
+
+        const corpo = window.document.body
+        corpo.style.background = 'brown' // alterei a cor no background
+        const teste_1 = window.document.getElementsByTagName('P')[0]
+        const mensagem_name = window.document.getElementsByName('pink')
+        mensagem_name.innerText = 'mudando a mensagem do elemento com o id = pink'
+    </script>
+</body>
+</html>
