@@ -3,63 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dom</title>
+    <title>DOM - Video Aula, 24/10</title>
+    <style>
+        body{
+            background-color: rgba(236, 226, 210, 0.664);
+            color: white;
+            
+        }
+        section{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(223, 192, 108);
+            border-radius: 1rem;
+            box-shadow: 10px 5px 5px gray;
+        }
+
+        .div_exemplo{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background-color: rgb(165, 147, 88);
+            width: 20rem;
+            height: 7rem;
+            color: rgb(255, 255, 255);
+            border-radius: 1rem;
+            box-shadow: 10px 5px 5px gray;
+        }
+    </style>
 </head>
 <body>
- 
-    <!-- Inserir item na lista -->
-    <label for="text">Digite o texto do novo parágrafo: </label>
-    <input type="text" id="texto">
-    <button type="button" onclick="contatos()">inserir</button>
 
-    <p>Parágrafo 1</p>
-    <p>Parágrafo 2</p>
-    <p>Parágrafo 3</p>
-    <p>Parágrafo 4</p>
-    <p><span>Parágrafo 5</span></p>
-    <ul id="corpo"></ul>
+    <section>
+        <h1>Aula DOM</h1>
+        <p>Testando os métodos do DOM</p>
+        <p>Vamos <strong>Aprender!</strong></p>
+      <div class="div_exemplo">
+        <h2 id="msg">Módulo 1</h2>
+        <div name="pink">Introdução ao DOM</div>
+      </div>
+        
+    </section>
 
     <script>
-        function getVsQuery() {
+        const modulo1 = window.document.getElementById('msg') //chamei pelo id
+        modulo1.style.color = 'purple' //troquei a cor do texto
 
-            const a = [1,,3,,,6];
-            //Métodos Datados: 
-          const arrayGets = document.getElementsByTagName('p');
-           //Métodos QuerySelector*: 
-           const arrayQuery = document.querySelectorAll('p');
-           // Imprimindo:
-           // arrayGets.array.forEach( x => console.log (p.innerText) );
-           arrayQuery.array.forEach( p => console.log (p.innerText) );
-           [1,,3,,,6].forEach( (v, i) => console.log(`a[${i}] = ${v}`) );
-           for(v of a){
-            console.log(v);
-           }
-
-        }
-
-        function inserir(){
-            //obtém o body:
-            let corpo = document.getElementById('corpo');
-            // obter o texto q o usuário digitou na caixa de texto(input):
-            let texto = document.getElementById("texto").value;
-            // criar o novo parágrafo:
-            let novoParagrafo = document.createElement('p');
-            // criei o objeto texto:
-            let folha = document.createTextNode(texto);
-            // colocar a folha no paragrafo
-            novoParagrafo.appendChild(folha);
-            // criando as arestra do grafo: (paragrafo no corpo)
-            corpo.appendChild(novoParagrafo);
-            corpo.innerHTML += `<p> ParInfinity School`;
-        }
-
-        function contatos() {
-            const corpo = document.getElementById("corpo");
-            const texto = document.getElementById("texto").value;
-            corpo.style.border = "3px solid blue"
-            corpo.innerHTML += `<li>${texto}<button>Excluir</button></li>`
-
-        }
+        const corpo = window.document.body
+        corpo.style.background = 'brown' // alterei a cor no background
+        const teste_1 = window.document.getElementsByTagName('P')[0]
+        const mensagem_name = window.document.getElementsByName('pink')
+        mensagem_name.innerText = 'mudando a mensagem do elemento com o id = pink'
     </script>
 </body>
 </html>
