@@ -1,0 +1,54 @@
+
+
+body{
+    background-color: rgb(232, 255, 248);
+    font-size: 1.3rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    background-image: linear-gradient(to right, rgb(203, 250, 235) , rgb(246, 255, 206));
+    border-radius: 8px;
+}
+
+main button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 30%;
+    padding: 0.5rem;
+    background-color: rgb(112, 226, 140);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main button:hover{
+    background-color: rgb(25, 189, 66);
+}
+
+main div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}

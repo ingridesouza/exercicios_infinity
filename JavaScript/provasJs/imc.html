@@ -1,0 +1,53 @@
+<!-- Crie no seu HTML dois inputs do tipo "number" e um botão. Quando clicado, o botão irá chamar uma função que calcula o IMC (Índice de Massa Corporal) e exibe o resultado na tela. Defina uma função que recebe os valores dos inputs (peso e altura), calcula o IMC e exibe o resultado na tela.
+
+
+A fórmula do IMC é:
+
+IMC = peso / (altura * altura) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="imc.css">
+  <title>Sua Saúde</title>
+</head>
+<body>
+    <main>
+      <div class="container">
+          <h1>Indíce de Massa Corporal</h1>
+
+          <div>
+            <label for="peso">Peso: </label>
+            <input type="number" id="peso" placeholder="Digite o peso" required>
+    
+            <label for="altura">Altura: </label>
+            <input type="number" id="altura" placeholder="Digite a altura" required>
+          
+            <button onclick="calcularIMC()">Calcular</button>
+          
+            <div id="resultado"></div>
+          </div>
+
+        </div>  
+    </main>
+
+  <script>
+    function calcularIMC() {
+
+      //criando duas variaveis de peso e altura, selecionando o elemento pelo id e guardando o valor
+      let peso = parseFloat(document.getElementById('peso').value);
+      let altura = parseFloat(document.getElementById('altura').value);
+
+      //criando a variavel imc com a formula do calculo, que usará o elemento das duas variaveis criadas acima
+      let imc = peso / (altura * altura);
+
+      //variavel resultadoDiv criada pegando o id da div 'resultado' e criando um elemento html para mostrar o resultado
+      let resultadoDiv = document.getElementById('resultado');
+      resultadoDiv.innerHTML = "<p>Seu IMC é: " + imc.toFixed(2) + "</p>";
+    }
+    </script>
+
+</body>
+</html>
