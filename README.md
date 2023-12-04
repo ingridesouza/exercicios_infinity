@@ -1,2 +1,0 @@
-# Exercicios_infinity
- 
