@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100&display=swap" rel="stylesheet">
+    <!-- fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
+
+    <!-- widget home -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- widget carrinho -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- medias social -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="pizzaria.css" />
     <title>Pizzaria</title>
 </head>
@@ -20,16 +41,24 @@
             <nav>
                 <ul>
                     <li>
+                        <span class="material-symbols-outlined">home
+                        </span><br>
                         <a href="#home">Home</a>
                     </li>
                     <li>
-                        <a href="#cardapio">Cardápio</a>
+                        <span class="material-symbols-outlined">menu_book
+                        </span><br>
+                        <a href="#sabores">Cardápio</a>
                     </li>
                     <li>
-                        <a href="#contato">Contato</a>
+                        <span class="material-symbols-outlined">perm_phone_msg
+                        </span><br>
+                        <a href="#Contato">Contato</a>
                     </li>
                     <li>
-                        <a href="./pedido.html">Pedido</a>
+                        <span class="material-symbols-outlined">shopping_cart_checkout
+                        </span><br>
+                        <a href="./pedido.html" >Pedido</a>
                     </li>
                 </ul>
             </nav>
@@ -37,170 +66,188 @@
     </header>
     <main>
         <section id="home">
-            <header>
-                <h1>Italian Pizzaria</h1>
-                <h2>Pizza artesanal de receita única, massa fina, crocante e de sabor incomparável!</h2>
-                <div class="opacidade">
-                    <img 
-                        src="images/pizzaheader.jpg"
-                        alt=""
-                        />
-                </div>
-            </header>
-            <div class="wrapper">
-                <h2>Sobre nós</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni consectetur enim repellendus expedita esse quo porro deleniti harum. Maiores tempore delectus aut minus ipsa deserunt hic odio voluptatem sit dolor.</p>
-
-                <div class="cards">
-                    <div class="card">
-                        <img src="images/abacaxi_camarao.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="images/atum_cebola.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="images/frango_catupiry.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="images/nutela_morango.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="images/pizza_marguerita.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="images/m&m.png" alt="pizza de calabresa"/>
-                        <div>
-                            <h4>Calabresa</h4>
-                            <p>Calabresa, mussarela, tomate, azeitona, queijo, orégano</p>
-                            <a href="#">Comprar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="cardapio" class="wrapper">
-            <header>
-                <h2>Cardápio</h2>
-            </header>
-            <table>
-                <thead>
-                    <tr>
-                        <th rowspan="2">Nome</th>
-                        <th rowspan="2">Descrição</th>
-                        <th colspan="4">Preço</th>
-                    </tr>
-    
-                    <tr>
-                        <th>P</th>
-                        <th>M</th>
-                        <th>G</th>
-                        <th>F</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Camarão com Abacaxi</td>
-                        <td>Descrição</td>
-                        <td>R$ 44,90</td>
-                        <td>R$ 61,90</td>
-                        <td>R$ 74,90</td>
-                        <td>R$ 104,90</td>
-                    </tr>
-                    <tr>
-                        <td>Frango com Catupiry</td>
-                        <td>Descrição</td>
-                        <td>R$ 44,90</td>
-                        <td>R$ 61,90</td>
-                        <td>R$ 74,90</td>
-                        <td>R$ 104,90</td>
-                    </tr>
-                    <tr>
-                        <td>Marguerita</td>
-                        <td>Descrição</td>
-                        <td>R$ 44,90</td>
-                        <td>R$ 61,90</td>
-                        <td>R$ 74,90</td>
-                        <td>R$ 104,90</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section id="contato" class="wrapper">
             <div>
-                <p>Telefone: <a href="tel:+559807786687">(71) 99990-7777</a></p>
-                <!-- paragrafo de email -->
-                <div>
-                    <a>
-                        <img /> <!-- link de instagram -->
-                    </a>
-                    <img /> <!-- link de facebook -->
-                    <img /> <!-- link de youtube -->
-                
+                <div class="posImg">
+                    <h1>Italian Pizzaria</h1>
+                    <p><span>Bem-vindo à Italian Pizzaria, onde a tradição e a paixão pela autêntica culinária italiana se encontram desde 1982.</span></p>
+                    <p><span>Fundada com amor e dedicação, nossa pizzaria tem sido um ponto de referência para os amantes da boa comida e momentos memoráveis ao redor da mesa.</span></p>
+                </div>
+
+                <div class="imagePizza">
+                    <img src="images/pizzaHeader.png" alt="">
+                </div>
+            
+            </div>
+        </section>
+
+        <section id="posHome">
+            <div class="textSobrePizzaria">
+                <p><span>Na Italian Pizzaria, honramos a tradição italiana em cada aspecto da nossa culinária.<br></p>
+            </div>
+            <div class="sobrePizzaria">
+                    <ul>
+                        <li> Nossas receitas são cuidadosamente elaboradas, utilizando ingredientes frescos e autênticos, trazendo à vida os sabores que tornam a cozinha italiana tão especial. </li><br>
+                        <li> A massa é preparada diariamente, o molho é feito com tomates selecionados e nossos queijos são escolhidos pela qualidade excepcional.</li>
+                    </ul>
+                    <ul>
+                        <li>Em nosso menu, você encontrará uma ampla variedade de sabores que atendem a todos os paladares.</li><br>
+                        <li> Desde as clássicas e reconfortantes opções de calabresa e margherita até criações ousadas como a pizza de abacaxi com camarão, cada pedaço é uma experiência única e deliciosa.</li>
+                    </ul>
+            </div>
+
+        </section>
+
+        <section id="sabores" class="sectionSabores">
+            <div class="nameCardapio">
+                <h1>Cardápio</h1>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src="images/abacaxi_camarao.png" alt="pizza de Abacaxi com Camarão"/>
+                    <div>
+                        <h4>Abacaxi com Camarão</h4>
+                        <p>Experimente a explosão de sabores tropicais com nossa irresistível Pizza Tropical de Abacaxi com Camarão! Uma combinação única de doçura refrescante do abacaxi e a deliciosa sutileza do camarão, tudo perfeitamente harmonizado em uma mordida inesquecível.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/atum_cebola.png" alt="pizza de Atum com Cebola"/>
+                    <div>
+                        <h4>Atum com Cebola</h4>
+                        <p>Uma opção leve e saborosa, a pizza de atum com cebola oferece uma combinação de atum suculento e cebolas caramelizadas sobre uma base de massa fina. O resultado é uma pizza equilibrada, com sabores que se complementam perfeitamente, proporcionando uma alternativa fresca e deliciosa.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/frango_catupiry.png" alt="pizza de Frango com Catupiry"/>
+                    <div>
+                        <h4>Frango com Catupiry</h4>
+                        <p>Uma combinação clássica e reconfortante, a pizza de frango com Catupiry apresenta uma base de massa coberta com pedaços suculentos de frango desfiado e o cremoso queijo Catupiry. Esta mistura de texturas e sabores cria uma experiência gastronômica deliciosa.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/nutela_morango.png" alt="pizza de Nutella com Morango"/>
+                    <div>
+                        <h4>Nutella com Morango</h4>
+                        <p>Para os amantes de sobremesas, a pizza Nutella com morango é uma indulgência irresistível. A massa é coberta com uma generosa camada de Nutella cremosa e morangos frescos, criando uma sobremesa decadente que certamente satisfará qualquer desejo por doces.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/pizza_marguerita.png" alt="pizza de Margherita"/>
+                    <div>
+                        <h4>Margherita</h4>
+                        <p>Inspirada na simplicidade italiana, a pizza Margherita apresenta uma base de massa fina coberta com tomates frescos, mussarela de alta qualidade e folhas de manjericão. O resultado é uma explosão de sabores frescos e autênticos que capturam a essência da cozinha italiana.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/quatroQueijos.png" alt="pizza de Quatro Queijos"/>
+                    <div>
+                        <h4>Quatro Queijos</h4>
+                        <p>Uma combinação irresistível de queijos derretidos, como muçarela, gorgonzola, parmesão e provolone. Cada mordida oferece uma explosão de sabores ricos e uma textura cremosa.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/pizzaVegetariana.png" alt="pizza Vegetariana"/>
+                    <div>
+                        <h4>Vegetariana</h4>
+                        <p>Esta pizza é uma festa de vegetais frescos, como pimentões coloridos, cogumelos, azeitonas, cebolas e tomates. A mistura de ingredientes naturais proporciona uma opção saudável e cheia de sabor.</p>
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/m&m.png" alt="pizza de m&m"/>
+                    <div>
+                        <h4>M&M</h4>
+                        <p>Desfrute de uma explosão de sabores doces e crocantes com a pizza M&M. A massa macia é generosamente coberta com M&M coloridos, derretendo na boca para uma experiência única que combina o clássico sabor da pizza com a doçura irresistível dos chocolates coloridos.</p>
+                        <a href="#">Comprar</a>
+                    </div>
                 </div>
             </div>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.92453515261!2d-38.45935602396754!3d-12.976678459913298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161bfce64f7c2d%3A0x8d355fdcd1358496!2sInfinity%20School!5e0!3m2!1spt-BR!2sbr!4v1697650144557!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        
+        
+
+        <section id="Contato">
+            <div class="cardsContato">
+                <div class="card white">
+                    <p class="tip">Nossos Telefones:</p>
+                    <p class="second-text"><a href="tel:+559807786687">(71) 99990-7777</a></p>
+                    <p class="second-text"><a href="tel:+5575981011035">(75) 98101-1035</a></p>
+                    <p class="second-text"><a href="tel:+5575981011035">(75) 98101-1035</a></p>
+                </div>
+                <div class="card white">
+                    <p class="tip">Endereço</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.92453515261!2d-38.45935602396754!3d-12.976678459913298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161bfce64f7c2d%3A0x8d355fdcd1358496!2sInfinity%20School!5e0!3m2!1spt-BR!2sbr!4v1697650144557!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="card white">
+                    <p class="tip">Áreas de Entrega</p>
+                    <p>
+                        <ul class="second-text">
+                        <li>Cabula</li>
+                        <li>Imbui</li>
+                        <li>Itaigara</li>
+                        <li>Novo Horizonte</li>
+                        <li>Pituacu</li>
+                      </ul>
+                    </p>
+                </div>
+            </div>
+
         </section>
     </main>
     <footer>
-        <div class="footer">
+        <div class="container-footer">
+            <div class="row-footer">
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#"> Quem somos </a></li>
+                        <li><a href=""> nossos serviços </a></li>
+                        <li><a href=""> política de privacidade </a></li>
+                        <li><a href=""> programa de afiliados</a></li>
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Ajuda</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Transporte</a></li>
+                        <li><a href="#">devoluções</a></li>
+                        <li><a href="#">Status De Pedido</a></li>
+                        <li><a href="#">Opções De Pagamento</a></li>
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Envie uma sugestão!</h4>
+                    <div class="form-sub">
+                        <form>
+                            <input type="email" placeholder="Digite aqui" required>
+                            <button>Enviar</button>
+                        </form>
+                    </div>
 
-          <div class="informacoes_footer">
-              <div class="nomes_footer">
-                  <p>Área de Entrega</p>
-              </div>
-            <ol>
-              <li>Cabula</li><br>
-              <li>Imbui</li><br>
-              <li>Itaigara</li><br>
-              <li>Novo Horizonte</li><br>
-              <li>Pituacu</li><br>
-            </ol>
-          </div>
+                    <div class="medias-socias">
+                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                        <a href="#"> <i class="fa fa-instagram"></i> </a>
+                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </div>
 
-          <div class="informacoes_footer">
-              <div class="nomes_footer">
-                  <p>Funcionamento</p>
-              </div>
-            <p>Atendimento de Segunda à Sexta 17:00 às 23:00hs / <br> Sábado Domingo e Feriados 11:00 às 23:00hrs</p>
-          </div>
-
-          <div class="informacoes_footer">
-              <div class="nomes_footer">
-                  <p>Nosso Endereço</p>
-              </div>
-            <p>Rua das Flores, Imbui, <br> Salvador, <br> CEP:12345-678</p>
-          </div>
-          
-      </div>
-
-      &copy; Italian Pizzaria, 2023
-  </footer>
+                </div>
+                <!--end footer col-->
+            </div>
+        </div>
+    </footer>
 
   <script>
 

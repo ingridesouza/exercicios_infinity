@@ -3,10 +3,14 @@ const tbody = document.querySelector("tbody")
 const fieldsForm1 = ["nome", "telefone", "endereco", "sabor_pizza", "tamanho_pizza"];
 
 const sabores = {
-    1: 'Pepperoni',
+    1: 'Frango com Catupiry',
     2: 'Calabresa',
-    3: 'Marguerita',
-    4: 'Bacon'
+    3: 'Margherita',
+    4: 'Atum com Cebola',
+    5: 'Morango com Nutella',
+    6: 'M&M',
+    7: 'Vegetariana',
+    8: 'Quatro Queijos',
 }
 
 const pedidos = []
@@ -70,3 +74,4 @@ function mostrarPedidos() {
             td.textContent = pedido[propriedade];        
         }
     })
+}
