@@ -1,4 +1,7 @@
 #LISTAS -> entre colchetes / MULTAVEL
+#As listas são usadas quando a ordem dos elementos é importante e quando é necessário modificar a coleção após a criação. 
+
+# As tuplas são úteis quando se quer uma coleção imutável, por exemplo, para definir coordenadas.
 
 # usuarios = ['ingride', 12345, True]
 # print(usuarios[0])

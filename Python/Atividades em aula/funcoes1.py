@@ -15,6 +15,9 @@
 # soma - nome da função
 # print - fora da função
 # virgula - É o separador
+# Parâmetros são as variáveis que a função recebe
+# Argumentos são os valores que você passa para os parâmetros.
+# Toda função retorna algo por padrão, se por exemplo, você não adicionar o return, ela retornará None por baixo dos panos.
 #---------------------------------------------
 # Paradigma procedural - Ler de cima pra baixo, da esquerda pra direita
 # Paradigma Funcional - Realiza computações através da avaliação de funções, evitando mudança de estado e dados mutáveis.

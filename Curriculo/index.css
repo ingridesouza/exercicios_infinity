@@ -1,0 +1,314 @@
+/* body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Rajdhani', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#nav_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C9033A;
+    border-radius: 25px;
+    padding-right: 2.5rem;
+    margin-top: 3rem;
+}
+#nav_container ul{
+    display: flex;
+    gap: 3rem;
+}
+#nav_container li{
+    display: flex;
+}
+#nav_container a {
+    text-decoration: none;
+    color: white;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+
+}
+#home img{
+    width: 20rem;
+    border-radius: 350px;
+}
+#sobre_mim{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 5rem 0 5rem;
+}
+#minhas_tecnologias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10rem;
+}
+#minhas_tecnologias h1{
+    display: flex;
+    justify-content: center;
+}
+#minhas_tecnologias h1 span{
+    display: flex;
+    justify-content: center;
+}
+
+#logo_tecnologias{
+    display: flex;
+    gap: 3rem;
+}
+#logo_tecnologias img{
+    transition: 0.6s;
+}
+
+#logo_tecnologias img:hover {
+    transform: scale(1.10);
+}
+#projetos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#projetos .cards{
+    display: flex;
+    gap: 3rem;
+}
+#projetos .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15rem;
+}
+#projetos img{
+    width: 27em;
+    height: 15em;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+#projetos img:hover{
+    transform: scale(1.10);
+}
+.spacer {
+    flex-grow: 1;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  } */
+
+
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C9033A;
+    border-radius: 25px;
+    padding-right: 2.5rem;
+    margin-top: 3rem;
+}
+
+#nav_container ul {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+#nav_container li {
+    display: flex;
+}
+
+#nav_container a {
+    text-decoration: none;
+    color: white;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#home img {
+    width: 20rem;
+    border-radius: 350px;
+}
+
+#sobre_mim {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#minhas_tecnologias {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+#minhas_tecnologias h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#minhas_tecnologias h1 span {
+    display: flex;
+    justify-content: center;
+}
+
+#logo_tecnologias {
+    display: flex;
+    gap: 1rem;
+}
+
+#logo_tecnologias img {
+    transition: 0.6s;
+}
+
+#logo_tecnologias img:hover {
+    transform: scale(1.10);
+}
+
+#projetos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#projetos .cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#projetos .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#projetos img {
+    width: 40rem;
+    height: auto;
+    transition: 0.6s;
+    border-radius: 10px;
+}
+
+#projetos img:hover {
+    transform: scale(1.10);
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+/* Adicionada uma regra de mídia para tamanhos de tela menores */
+@media screen and (max-width: 768px) {
+    #nav_container {
+        padding-right: 1rem;
+    }
+
+    #home {
+        padding: 1rem;
+    }
+
+    #sobre_mim {
+        padding: 0.5rem;
+    }
+
+    #minhas_tecnologias {
+        margin-bottom: 1rem;
+    }
+
+    #projetos .card {
+        margin-bottom: 1rem;
+    }
+
+    #projetos .cards {
+        justify-content: flex-start; /* Alinha os cards à esquerda em telas menores */
+    }
+}
