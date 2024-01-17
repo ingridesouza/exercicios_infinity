@@ -32,8 +32,8 @@ while True:
         D- Movimente-se para a direita
     ''')
 
-    match escolhaMovimentos:
-        case 'S':
+    # match escolhaMovimentos:
+        # case 'S':
             
 
-#   digite a sua proxima jogada :        
+#   digite a sua proxima jogada :       
