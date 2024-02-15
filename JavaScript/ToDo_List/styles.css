@@ -15,7 +15,7 @@ body{
 }
 
 main{
-    background-color: rgb(240, 197, 197);
+    background-color: #cbdadf;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -49,13 +49,18 @@ h1{
 
 .containerCadastro button{
     width: 6rem;
-    background-color: rgb(62, 192, 57);
-    color: white;
+    background-color: #3aa9ce;
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
+    font-family: 'Poiret One', sans-serif;
     border-radius: 5px;
     border: none;
     text-shadow: 0 0 2px rgb(0, 0, 0, 0.53);
     cursor: pointer;
+}
+.containerCadastro button:hover{
+    background-color: #2a7892;
+    color: rgb(255, 255, 255);
 }
 
 .tarefas{
@@ -66,10 +71,12 @@ h1{
 
 .tarefa{
     width: 100%;
-    background-color: rgb(241, 167, 167);
+    background-color:  #90b4c0;
+    font-family: 'Poiret One', sans-serif;
+    color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 1.5rem;
     gap: 1rem;
     margin-bottom: 1rem;
@@ -79,15 +86,11 @@ h1{
     width: 1rem;
 }
 
-/* .tarefa input:checked + p {
-    color: red;
-    text-decoration: line-through;
-} */
 
 .tarefa p{
     font-size: 1.4rem;
     font-weight: 700;
-
+    transition: color 0.3s ease;
 }
 .tarefa button{
     margin-left: auto;
@@ -95,5 +98,9 @@ h1{
     cursor: pointer;
     border:none;
     border-radius: 5px;
-                    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.tarefa button:hover{
+    background-color: rgb(199, 30, 30);
+    color: rgb(255, 255, 255);
 }

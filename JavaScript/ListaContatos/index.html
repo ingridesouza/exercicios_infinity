@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Contatos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Contatos</h1>
+
+        <form id="formContato">
+            <div class="input-agrupado">
+                <div class="input-agrupado-item">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="input-agrupado-item">
+                    <label for="numero">Número:</label>
+                    <input type="tel" id="numero" required>
+                </div>
+            </div>
+        
+            <div class="input-agrupado">
+                <div class="input-agrupado-item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+            </div>
+        
+            <button type="button" onclick="adicionarContato()">Adicionar Contato</button>
+        </form>
+
+        <div id="contatos">
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

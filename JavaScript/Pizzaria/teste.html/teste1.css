@@ -1,5 +1,10 @@
 :root {
+    /* representa o elemento raiz do projeto, no caso, a tag html */
+    
+    /* calcula a base para 10px do tamanho de fonte já que ele capta op font-size do navegador e a base é 16px */
     font-size: 62.5%;
+
+    /* o comportamento do scroll fica suave */
     scroll-behavior: smooth;
 }
 
@@ -7,14 +12,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; 
     font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
+    /* para que o body tenha sempre no minimo
+    100% do tamanhoi de altura da janela */
+}
+
+main {
+    flex: 1;
+    /* Para que o main aumente e capte todo o 
+    tamanho disponivel para ele no container flex
+    empurrando os outros elementos */
 }
 
 .wrapper {
@@ -25,13 +39,14 @@ body {
 .header-principal {
     background-color: white;
 }
+.material-symbols-outlined-home{
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
 
-.material-symbols-outlined-home {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-.material-symbols-outlined{
-    color: rgb(85, 107, 47);
-}
 
 .header-wrapper {
     display: flex;
@@ -40,12 +55,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
+}
 
-    @media(min-width: 870px) {
+@media(min-width: 870px) {
+    .header-wrapper {
         flex-direction: row;
     }
 }
 
+/* seletor de filhos diretos, só pega
+tags que sejam filhas diretas do elemento */
 .header-principal .nav-brand {
     display: flex;
     gap: 2rem;
@@ -55,7 +74,6 @@ body {
 .header-principal .nav-brand > img {
     width: 5rem;
 }
-
 .header-principal .nav-brand > h1 {
     font-family: 'Urbanist', sans-serif;
     font-size: 3rem;
@@ -70,129 +88,115 @@ body {
 .header-principal nav li {
     padding: 0.5rem 1.5rem;
     text-align: center;
-    &:not(:first-of-type) {
-        border-left: 1px solid black;
-    }
+}
+
+.header-principal nav li:not(:first-of-type) {
+    border-left: 1px solid black;
 }
 
 .header-principal nav a {
     color: black;
     text-decoration: none;
     position: relative;
-
-    &:after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        content: "";
-        height: 2px;
-        width: 0;
-        background-color: black;
-        transition: 0.4s;
-    }
-
-    &:hover:after {
-        width: 100%;
-    }
 }
 
+.header-principal nav a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: black;
+    transition: 0.4s;
+}
+
+.header-principal nav a:hover::after {
+    width: 100%;
+}
 /* --------------------- SECTION HOME ---------------- */
 
-/* Estilo para a seção #home */
-#home {
-    background-color: rgb(255, 0, 0);
-    font-size: 2.6rem;
-    padding: 2rem; /* Adicionado padding para melhorar a legibilidade */
+
+#home{
+    background-color: red;
+    /* padding: 10rem; */
+    font-size: 1.6rem;
 }
 
-/* Estilo para a classe .posImg */
-.posImg {
+.posImg{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 5rem;
-    gap: 2rem;
-    font-size: 1.6rem;
+    padding: 10rem;
+    gap: 3rem;
+    font-size: 1.8rem;
     color: white;
 }
 
-.posImg h1 {
+.posImg h1{
     font-family: 'Whisper', cursive;
-    font-size: 4rem;
+    font-size: 8rem;
 }
 
-.posImg p {
-    font-size: 1.6rem;
+.posImg p{
+    font-size: 2rem;
 }
 
-#home .imagePizza {
-    width: 10rem;
-    height: 10rem;
-}
-
-
-/* --------------------------------------------------------------- */
-/*seção #introducao */
-#introducao {
-    flex-wrap: wrap;
-}
-
-/*.pontos_pizzaria */
-.pontos_pizzaria {
+#home .imagePizza{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    text-align: center;
+    width: 20rem;
+    height: 20rem;
+}
+
+#posHome{
+    flex-wrap: wrap;
+}
+.sobrePizzaria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem;
     margin-top: 2rem;
-    gap: 2rem;
-    font-size: 1.6rem;
+    gap: 8rem;
+    font-size: 1.8rem;
+    font-family: 'Libre Baskerville', serif;
     color: rgb(0, 0, 0);
+    /* background-color: #cecdcd; */
     border-radius: 10px;
+    flex-wrap: wrap;
     text-align: center;
 }
 
-/* .individualizar_frases */
-.individualizar_frases {
-    display: flex;
-    gap: 1rem; 
-}
-
-/* .textSobrePizzaria */
-.textSobrePizzaria {
+.textSobrePizzaria{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-family: 'Urbanist', sans-serif;
-    font-size: 2rem;
-    margin: 5rem;
+    font-size: 4rem;
+
+    margin: 10rem;
 }
 
-/* .grupo1 e .grupo2 */
-.grupo1,
-.grupo2 {
+.div_sobre1,
+.div_sobre2{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    padding: 2rem;
-    gap: 2rem;
+    border-radius: 10px;
+    padding: 5rem;
 }
-
-/* .grupo1 e .grupo2 */
-.grupo1 p,
-.grupo2 p {
-    gap: 1rem;
+.div_sobre1,
+.div_sobre2, p {
 }
-
 
 /* --------------------- SECTION SABORES COM A LISTA SOBRE A PIZZARIA E OS SABORES DISPONIVEIS----------------------------- */
 
-.sessao_sabores{
-    background-color: transparent;
+.sectionSabores{
+    background-color: rgb(85, 107, 47);
     margin-top: 10rem;
 }
 
@@ -200,7 +204,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(85, 107, 47);
+    color: white;
     padding: 5rem;
     font-family: 'Whisper', cursive;
     font-size: 6.5rem;
@@ -222,13 +226,9 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 10px gray;
     transition: 0.4s;
-    color:rgb(85, 107, 47);
+    color: white;
     text-align: center;
     margin-top: 5rem;
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-    }
 }
 #sabores .card:hover {
     transform: scale(1.06);
@@ -265,78 +265,79 @@ body {
     border-color: green;
     color: green;
     background-color: white;
-}
+} 
+
+/* ------------ TABELA COM VALORES--------------------- */
+
 
 /* ---------------------CARDS COM AS OPCOES DE CONTATO----------------------------- */
 
-/* Container principal */
+/* #Contato{
+   
+} */
 .cardsContato {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    padding: 5rem; /* Reduzi o padding para torná-lo mais proporcionado */
+    padding: 10rem;
   }
   
-  /* Card individual */
+  .cardsContato .white {
+    background-color: #e9e9e9;
+    color: black;
+  }
+  
   .cardsContato .card {
-    background-color: rgb(255, 208, 120);
-    text-decoration: none;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     height: 20rem;
-    width: 100%; 
-    max-width: 30rem;
-    border-radius: 0.3rem;
+    width: 80rem;
+    border-radius: 1rem;
+    color: rgb(1, 1, 1);
     cursor: pointer;
     transition: 400ms;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adicionei um leve sombreamento */
+    gap: 1rem;
   }
   
-  /* Textos dentro do card */
   .cardsContato .card p.tip {
     font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 0.5rem; /* Adicionei um espaçamento inferior */
   }
   
-  .cardsContato .card p.second-text,
+  .cardsContato .card p.second-text {
+    font-size: 1.6rem;
+  }
   .cardsContato .card ul.second-text {
-    font-size: 1.4rem; /* Ajustei o tamanho da fonte para torná-lo mais legível */
-    margin-bottom: 1rem; /* Adicionei um espaçamento inferior */
+    font-size: 1.2rem;
   }
   
-  /* Efeito de hover */
   .cardsContato .card:hover {
-    transform: scale(1.05); /* Ajustei a escala para um efeito mais sutil */
+    transform: scale(1.1, 1.1);
   }
   
   .cardsContato:hover > .card:not(:hover) {
-    filter: blur(5px); /* Reduzi o desfoque para um efeito mais suave */
-    transform: scale(0.95); /* Ajustei a escala para um efeito mais sutil */
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
   }
-  
-  /* Estilos para telas menores (até 600px) */
-  @media screen and (max-width: 600px) {
-    .cardsContato {
-      flex-direction: column; /* Alterei a direção da flex para empilhar em telas menores */
-      padding: 2rem; /* Reduzi o padding para ocupar melhor o espaço em telas menores */
+
+
+
+/* Estilos para telas menores (até 600px) */
+@media screen and (max-width: 600px) {
+    .card {
+        width: 80%; /* Reduz a largura dos cards para ocupar 80% da largura da tela */
     }
-  
-    .cardsContato .card {
-      width: 100%; /* Ajustei para ocupar 100% da largura da tela */
-      max-width: none; /* Removi o máximo para permitir que ocupe a largura total */
-    }
-  }
-  
+}
+
+
 /*------------------------FOOTER---------------------*/
 
 footer{
-    background: rgb(177, 209, 122);
+    background-color:red;
     padding: 50px 0;
 }
 .container-footer{
@@ -355,7 +356,7 @@ footer{
 }
 .footer-col h4{
     font-size: 22px;
-    color: rgb(85, 107, 47);
+    color: white;
     margin-bottom: 20px;
     font-weight: 500;
     position: relative;
@@ -370,14 +371,14 @@ footer{
 .footer-col ul li a{
     font-size: 16px;
     text-transform: capitalize;
-    color:rgb(85, 107, 47);
+    color: white;
     text-decoration: none;
     font-weight: 300;
     display: block;
     transition: all 0.3s ease;
 }
 .footer-col ul li a:hover{
-    color: #ffffff;
+    color: #cecdcd;
     padding-left: 10px;
 }
 .footer-col .medias-socias{
@@ -392,17 +393,17 @@ footer{
     margin: 0 10px 10px 0;
     text-decoration: none;
     border-radius: 50%;
-    color: rgb(85, 107, 47);
+    color: white;
     border: 1px solid white;
     transition: all 0.5s ease;
 }
 .footer-col .medias-socias a i{
     font-size: 20px;
-    color: rgb(255, 255, 255);
 }
 
 .footer-col .medias-socias a:hover{
-    background-color: rgb(85, 107, 47);
+    color: rgb(214, 70, 70);
+    background-color: white;
 }
 .footer-col .form-sub input{
     width: 100%;
@@ -411,7 +412,7 @@ footer{
     outline: none;
     border: 1px solid white;
     color: white;
-    background-color:rgb(85, 107, 47);
+    background-color:rgb(214, 70, 70);
 }
 .footer-col .form-sub input::placeholder{
     color: white;
@@ -424,7 +425,7 @@ footer{
     outline: none;
     border: none;
     cursor: pointer;
-    color: rgb(85, 107, 47);
+    color: rgb(214, 70, 70);
     border-radius: 3px;
     font-weight: bold;
     background-color: white;        

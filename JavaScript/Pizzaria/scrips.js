@@ -1,3 +1,4 @@
+
 const form = document.querySelector('#form_pedido')
 const tbody = document.querySelector("tbody")
 const fieldsForm1 = ["nome", "telefone", "endereco", "sabor_pizza", "tamanho_pizza"];
