@@ -66,8 +66,6 @@ def removerProduto(listaProdutos, nomeProduto):
 #----------------------------------------------------
 
 
-# listaProdutos = []
-
 while True:
     print('---------------LISTA DE COMPRAS---------------')
     print('----------SELECIONE A OPÇÃO DESEJADA----------')
