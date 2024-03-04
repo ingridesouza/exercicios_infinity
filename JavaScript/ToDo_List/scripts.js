@@ -75,6 +75,7 @@ function marcarConcluida(id, completa) {
     mostrarTarefa(tarefas);
 }
 
+// Anotações----------------------------------------------
 
 // const cadastroBtn = document.querySelectorAll("#form-pedido input[type=cheeckbox]")
 // const cadastroBtn = document.querySelector(".criarTarefa")
