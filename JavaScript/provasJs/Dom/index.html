@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Unidades de Comprimento</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <h2>Conversor de Unidades de Comprimento</h2>
+    <label for="valor">Valor em metros:</label>
+    <input type="number" id="valor" placeholder="Digite o valor em metros">
+    <label for="unidade">Converter para:</label>
+    <select id="unidade">
+    <option value="jarda">Jarda</option>
+    <option value="pe">Pé</option>
+    <option value="polegada">Polegada</option>
+    <option value="milha">Milha</option>
+    </select>
+    <button id="btnConverter">Converter</button>
+    <p id="resultado"></p>
+
+    <script>
+      document.getElementById('btnConverter').addEventListener('click', function() {
+        const valorEmMetros = parseFloat(document.getElementById('valor').value);
+        const unidadeSelecionada = document.getElementById('unidade').value;
+        let resultado;
+
+        switch (unidadeSelecionada) {
+          case 'jarda':
+            resultado = valorEmMetros * 1.094;
+            document.getElementById('resultado').textContent = `${valorEmMetros} metros é igual a ${resultado.toFixed(2)} jardas.`;
+            break;
+          case 'pe':
+            resultado = valorEmMetros * 3.281;
+            document.getElementById('resultado').textContent = `${valorEmMetros} metros é igual a ${resultado.toFixed(2)} pés.`;
+            break;
+          case 'polegada':
+            resultado = valorEmMetros * 39.37;
+            document.getElementById('resultado').textContent = `${valorEmMetros} metros é igual a ${resultado.toFixed(2)} polegadas.`;
+            break;
+          case 'milha':
+            resultado = valorEmMetros * 0.000621;
+            document.getElementById('resultado').textContent = `${valorEmetros} metros é igual a ${resultado.toFixed(2)} milhas.`;
+            break;
+          default:
+            document.getElementById('resultado').textContent = 'Por favor, selecione uma unidade válida.';
+        }
+      });
+    </script>
+</body>
+</html>
