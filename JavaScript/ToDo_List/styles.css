@@ -15,7 +15,7 @@ body{
 }
 
 main{
-    background-color: #cbdadf;
+    background-color: #dfcbde;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ h1{
 
 .containerCadastro button{
     width: 6rem;
-    background-color: #3aa9ce;
+    background-color: #ce3ace;
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
     font-family: 'Poiret One', sans-serif;
@@ -59,7 +59,7 @@ h1{
     cursor: pointer;
 }
 .containerCadastro button:hover{
-    background-color: #2a7892;
+    background-color: #922a89;
     color: rgb(255, 255, 255);
 }
 
@@ -71,7 +71,7 @@ h1{
 
 .tarefa{
     width: 100%;
-    background-color:  #90b4c0;
+    background-color:  #b190c0;
     font-family: 'Poiret One', sans-serif;
     color: rgb(0, 0, 0);
     display: flex;
