@@ -23,7 +23,8 @@ function exibirContatos() {
         li.innerHTML = `
             <strong>${contato.nome}</strong>: ${contato.telefone}
             <button onclick="editarContato('${contato.nome}')">Editar</button>
-            <button onclick="excluirContato('${contato.nome}')">Excluir</button>
+            <button class="excluir" onclick="excluirContato('${contato.nome}')">Excluir</button>
+
         `;
         listaContatos.appendChild(li);
     });
