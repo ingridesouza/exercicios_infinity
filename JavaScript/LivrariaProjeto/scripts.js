@@ -1,5 +1,17 @@
 let livros = [];
 
+function carregarLivros() {
+    const livrosSalvos = localStorage.getItem('livros');
+    if (livrosSalvos) {
+        livros = JSON.parse(livrosSalvos);
+        exibirLivros();
+    }
+}
+
+function salvarLivros() {
+    localStorage.setItem('livros', JSON.stringify(livros));
+}
+
 function exibirLivros() {
     const containerLivros = document.getElementById('livros');
     containerLivros.innerHTML = '';
@@ -70,8 +82,11 @@ function adicionarLivro(event) {
         avaliacao: parseFloat(avaliacao)
     });
 
+    salvarLivros();
     exibirLivros();
     document.getElementById('formulario').reset();
 }
+
+carregarLivros();
 
 document.getElementById('formulario').addEventListener('submit', adicionarLivro);
