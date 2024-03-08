@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingride Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            margin-top: 50px; /* Adiciona margem superior para o cabeçalho */
+        }
+
+        #header {
+            background-color: #ffffff;
+            color: #398118;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: calc(100% - 1rem);
+            z-index: 1000;
+            top: 0; /* Define o cabeçalho no topo da página */
+        }
+
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        #header-links {
+            margin-right: 20px;
+        }
+
+        #header-links a {
+            color:#398118;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        #cart-icon {
+            font-size: 24px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #cart-items-count {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            max-width: 300px;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .product-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cart-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 300px;
+        }
+
+        #close-cart {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #register-form, #login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 300px;
+            text-align: center;
+            display: none;
+        }
+
+        .close-form {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container .close-form {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">Ingride Store</div>
+        <div id="header-right">
+            <div id="header-links">
+                <a href="#">Criar Conta</a>
+                <a href="#">Fazer Login</a>
+            </div>
+            <div id="cart-icon" class="material-icons">shopping_cart</div>
+            <div id="cart-items-count">0</div>
+        </div>
+    </div>
+
+    <div id="carousel-header" style="width: 100%; overflow: hidden;">
+        <div class="carousel" style="width: 100%; display: inline-flex;">
+        </div>
+    </div>
+
+    <div id="register-form" class="form-container">
+        <span class="material-icons close-form">close</span>
+        <h2>Criar Conta</h2>
+        <form>
+            <label for="username">Nome de usuário:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Senha:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div id="login-form" class="form-container">
+        <span class="material-icons close-form">close</span>
+        <h2>Fazer Login</h2>
+        <form>
+            <label for="username">Nome de usuário:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Senha:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="catalog" style="display: flex; justify-content: center; flex-wrap: wrap;"></div>
+
+    <div id="cart-overlay">
+        <div id="cart-container">
+            <span id="close-cart" class="material-icons close-form">close</span>
+            <h2>Resumo do Carrinho</h2>
+            <ul id="cart-items"></ul>
+            <div id="total-price"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+    <script>
+        const cartProducts = [];
+
+        window.onload = function() {
+            const cartOverlay = document.getElementById('cart-overlay');
+            const cartIcon = document.getElementById('cart-icon');
+            const catalog = document.getElementById('catalog');
+            const cartItemsCount = document.getElementById('cart-items-count');
+            const cartItemsList = document.getElementById('cart-items');
+            const totalPrice = document.getElementById('total-price');
+            const closeCart = document.getElementById('close-cart');
+            const registerLink = document.querySelector('#header-links a[href="#"]');
+            const loginLink = document.querySelector('#header-links a[href="#"]');
+            const registerForm = document.getElementById('register-form');
+            const loginForm = document.getElementById('login-form');
+
+            function addToCart(product) {
+                cartProducts.push(product);
+                cartItemsCount.textContent = cartProducts.length;
+
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.title} - R$ ${product.price.toFixed(2)}`;
+                cartItemsList.appendChild(listItem);
+
+                const total = cartProducts.reduce((acc, curr) => acc + curr.price, 0);
+                totalPrice.textContent = `Total: R$ ${total.toFixed(2)}`;
+            }
+
+            fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(products => {
+                products.forEach(product => {
+                    const card = document.createElement('div');
+                    card.classList.add('product-card');
+                    card.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <p class="product-price">Preço: R$ ${product.price.toFixed(2)}</p>
+                        <button class="product-btn">Adicionar ao Carrinho</button>
+                    `;
+                    catalog.appendChild(card);
+
+                    const addToCartButton = card.querySelector('.product-btn');
+                    addToCartButton.addEventListener('click', () => {
+                        addToCart(product);
+                    });
+                });
+            });
+
+            cartIcon.addEventListener('click', () => {
+                cartOverlay.style.display = 'flex';
+            });
+
+            closeCart.addEventListener('click', () => {
+                cartOverlay.style.display = 'none';
+            });
+
+            registerLink.addEventListener('click', () => {
+                registerForm.style.display = 'flex';
+                loginForm.style.display = 'none';
+            });
+
+            loginLink.addEventListener('click', () => {
+                loginForm.style.display = 'flex';
+                registerForm.style.display = 'none';
+            });
+
+            document.querySelectorAll('.close-form').forEach(closeButton => {
+                closeButton.addEventListener('click', () => {
+                    registerForm.style.display = 'none';
+                    loginForm.style.display = 'none';
+                });
+            });
+        };
+    </script>
+</body>
+</html>
