@@ -1,64 +1,123 @@
 class Livro:
-    def __init__(self, titulo, autor, id, status_emprestimo = False):
+    def __init__(self, titulo, autor, id, status_emprestimo=False):
+        """
+        Inicializa um objeto Livro.
+
+        Args:
+            titulo (str): O título do livro.
+            autor (str): O autor do livro.
+            id (int): O identificador único do livro.
+            status_emprestimo (bool, opcional): O status de empréstimo do livro. Padrão é False.
+        """
         self.titulo = titulo
         self.autor = autor
         self.id = id
         self.status_emprestimo = status_emprestimo
 
-
     def __str__(self):
-        return f"{self.titulo} (ID: {self.id}) - Autor: {self.autor}, Empréstimo: {'Disponível' if not self.status_emprestimo else 'Indisponível'}"
+        """
+        Retorna uma representação em string do objeto Livro.
+
+        Returns:
+            str: A representação em string do livro.
+        """
+        status = 'Disponível' if not self.status_emprestimo else 'Indisponível'
+        return f"{self.titulo} (ID: {self.id}) - Autor: {self.autor}, Empréstimo: {status}"
+
 
 class Membro:
-    def __init__(self, nome, id_membro, livros_emprestados = None):
-        self.nome = nome
-        self.id_membro = id_membro
-        self.livros_emprestados = livros_emprestados if livros_emprestados else []
+    def __init__(self, nome, id):
+        """
+        Inicializa um objeto Membro.
 
+        Args:
+            nome (str): O nome do membro.
+            id (int): O identificador único do membro.
+        """
+        self.nome = nome
+        self.id = id
+        self.livros_emprestados = []
 
     def __str__(self):
-        # O método __str__ é um método 'especial' do python para controlar como um objeto é convertido em uma string.
+        """
+        Retorna uma representação em string do objeto Membro.
 
-        return f"{self.nome} (ID: {self.id_membro}) - Livros emprestados: {len(self.livros_emprestados)}"
+        Returns:
+            str: A representação em string do membro.
+        """
+        return f"{self.nome} (ID: {self.id}) - Livros emprestados: {len(self.livros_emprestados)}"
+
 
 class Biblioteca:
-    def __init__(self, registro_membros=None):
+    def __init__(self):
+        """Inicializa um objeto Biblioteca."""
         self.catalogo = []
-        self.registro_membros = registro_membros if registro_membros else []
-        self.registro_membros = registro_membros if registro_membros else []
-
-        #  Se registro_membros for fornecido ao criar uma instância da classe (Biblioteca), ele será utilizado. Caso contrário, será criada uma lista vazia ([]) e atribuída a registro_membros. Isso garante que o atributo registro_membros sempre seja uma lista, mesmo que inicialmente não seja fornecido nenhum valor ou seja fornecido um valor nulo.
+        self.registro_membros = []
 
     def adicionar_livro(self, titulo, autor):
+        """
+        Adiciona um novo livro ao catálogo da biblioteca.
+
+        Args:
+            titulo (str): O título do livro.
+            autor (str): O autor do livro.
+
+        Returns:
+            str: Mensagem informando que o livro foi adicionado ao catálogo.
+        """
         livro = Livro(titulo, autor, len(self.catalogo) + 1)
         self.catalogo.append(livro)
         return f'O livro "{livro.titulo}" foi adicionado ao catálogo.'
 
-
     def adicionar_membro(self, nome):
+        """
+        Adiciona um novo membro à biblioteca.
+
+        Args:
+            nome (str): O nome do membro.
+
+        Returns:
+            str: Mensagem informando que o membro foi adicionado à biblioteca.
+        """
         membro = Membro(nome, len(self.registro_membros) + 1)
         self.registro_membros.append(membro)
         return f'O membro "{membro.nome}" foi adicionado à biblioteca.'
 
-
     def emprestar_livro(self, id_livro, id_membro):
+        """
+        Empresta um livro para um membro da biblioteca.
+
+        Args:
+            id_livro (int): O ID do livro a ser emprestado.
+            id_membro (int): O ID do membro que solicita o empréstimo.
+
+        Returns:
+            str: Mensagem informando o resultado da operação de empréstimo.
+        """
         livro = self.encontrar_livro_por_id(id_livro)
         membro = self.encontrar_membro_por_id(id_membro)
 
         if livro and membro:
-            # verifica se tanto o objeto livro quanto o objeto membro existem (não são None ou outros valores considerados como False em Python), garantindo que ambos os objetos necessários para realizar o empréstimo estejam presentes.
             if not livro.status_emprestimo:
-                # verifica se o livro não está atualmente emprestado, usando a condição not 
                 livro.status_emprestimo = True
                 membro.livros_emprestados.append(livro)
-                print(f'O livro "{livro.titulo}" foi emprestado para o membro "{membro.nome}".')
+                return f'O livro "{livro.titulo}" foi emprestado para o membro "{membro.nome}".'
             else:
-                print(f'O livro "{livro.titulo}" já está emprestado.')
+                return f'O livro "{livro.titulo}" já está emprestado.'
         else:
-            print('Livro ou membro não encontrado.')
-
+            return 'Livro ou membro não encontrado.'
 
     def registrar_devolucao(self, id_livro, id_membro):
+        """
+        Registra a devolução de um livro pela biblioteca.
+
+        Args:
+            id_livro (int): O ID do livro devolvido.
+            id_membro (int): O ID do membro que devolveu o livro.
+
+        Returns:
+            str: Mensagem informando o resultado da operação de devolução.
+        """
         livro = self.encontrar_livro_por_id(id_livro)
         membro = self.encontrar_membro_por_id(id_membro)
 
@@ -66,56 +125,64 @@ class Biblioteca:
             if livro.status_emprestimo and livro in membro.livros_emprestados:
                 livro.status_emprestimo = False
                 membro.livros_emprestados.remove(livro)
-                print(f'O livro "{livro.titulo}" foi devolvido pelo membro "{membro.nome}".')
+                return f'O livro "{livro.titulo}" foi devolvido pelo membro "{membro.nome}".'
             else:
-                print(f'O livro "{livro.titulo}" não está atualmente emprestado para o membro "{membro.nome}".')
+                return f'O livro "{livro.titulo}" não está atualmente emprestado para o membro "{membro.nome}".'
         else:
-            print('Livro ou membro não encontrado.')
-
+            return 'Livro ou membro não encontrado.'
 
     def pesquisar_livros(self, termo):
+        """
+        Pesquisa livros no catálogo da biblioteca.
+
+        Args:
+            termo (str): O termo a ser pesquisado.
+
+        Returns:
+            str: Mensagem com os resultados da pesquisa.
+        """
         resultados = [livro for livro in self.catalogo if termo.lower() in livro.titulo.lower() or termo.lower() in livro.autor.lower() or str(livro.id) == termo]
         
         if resultados:
-            print("Resultados da pesquisa:")
+            mensagem = "Resultados da pesquisa:\n"
             for livro in resultados:
-                print(livro)
+                mensagem += str(livro) + "\n"
+            return mensagem
         else:
-            print(f"Nenhum livro encontrado para o termo: '{termo}'.")
+            return f"Nenhum livro encontrado para o termo: '{termo}'."
 
-#----------------------------------------------------------------------
+    def encontrar_livro_por_id(self, id_livro):
+        """
+        Encontra um livro no catálogo da biblioteca pelo ID.
 
-    # def encontrar_livro_por_id(self, id_livro):
-    #     for livro in self.catalogo:
-    #         if livro.id == id_livro:
-    #             return livro
-    #     return None
-            
-    def encontrar_livro_por_nome(self, nome_livro):
+        Args:
+            id_livro (int): O ID do livro a ser encontrado.
+
+        Returns:
+            Livro or None: O livro encontrado ou None se não encontrado.
+        """
         for livro in self.catalogo:
-            if livro.nome == nome_livro:
+            if livro.id == id_livro:
                 return livro
         return None
     
-#----------------------------------------------------------------------
-
     def encontrar_membro_por_id(self, id_membro):
+        """
+        Encontra um membro na lista de membros da biblioteca pelo ID.
+
+        Args:
+            id_membro (int): O ID do membro a ser encontrado.
+
+        Returns:
+            Membro or None: O membro encontrado ou None se não encontrado.
+        """
         for membro in self.registro_membros:
-            if membro.id_membro == id_membro:
+            if membro.id == id_membro:
                 return membro
         return None
 
-#----------------------------------------------------------------------
-
-    def __str__(self):
-        catalogo_str = "\n".join([str(livro) for livro in self.catalogo])
-        membros_str = "\n".join([str(membro) for membro in self.registro_membros])
-        return f"Catálogo:\n{catalogo_str}\nMembros:\n{membros_str}"
-
-#----------------------------------------------------------------------
-
     def visualizar_catalogo(self):
+        """Visualiza o catálogo da biblioteca."""
         print("\nCatálogo da Biblioteca:")
         for livro in self.catalogo:
             print(livro)
-
