@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptomoedas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-title">Stark Industries</h1>
+        <div class="header-content">
+            <span class="material-symbols-outlined">
+                mystery</span>
+            <input type="text" id="filter-input" placeholder="Filtrar por criptomoeda">
+        </div>
+    </header>
+    
+    <main>
+        <section id="description-site">
+            <h1>Stark Industries: Seu Portal de Criptomoedas e Conversão</h1>
+
+            <p>Bem-vindo ao Stark Industries, o seu destino definitivo para explorar o emocionante mundo das criptomoedas. Aqui, no coração da inovação tecnológica, oferecemos uma plataforma completa que não apenas fornece informações detalhadas sobre as criptomoedas mais proeminentes do mercado, mas também permite que você converta suas moedas digitais de forma rápida e eficiente.</p>
+
+            <p>Em nosso site, você encontrará uma lista abrangente das criptomoedas mais famosas, desde os pesos pesados como Bitcoin e Ethereum até as moedas emergentes que estão moldando o futuro das finanças descentralizadas. Cada criptomoeda é acompanhada por uma descrição detalhada, fornecendo insights essenciais sobre sua tecnologia subjacente, histórico de preços e casos de uso.</p>
+
+        </section>
+        <section id="conversion">
+            <h2>Conversão de Moedas</h2>
+            <label for="from-currency-select">De:</label>
+            <select id="from-currency-select">
+                <!-- seleção da moeda -->
+            </select>
+            <input type="number" id="amount-input" placeholder="Quantidade">
+            <label for="to-currency-select">Para:</label>
+            <select id="to-currency-select">
+                <!-- seleção da moeda -->
+            </select>
+            <button id="convert-btn">Converter</button>
+            <div id="converted-result">
+                <!-- resultado da conversão -->
+            </div>
+        </section>
+        <section id="crypto-info">
+            <!-- informações das criptomoedas -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="modal-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion-site">
+            <p>A Stark Corporation está embarcando em uma emocionante jornada rumo ao universo das criptomoedas e dos NFTs. Com uma mentalidade de vanguarda e um compromisso com a inovação, estamos prontos para explorar novas fronteiras e desafiar os limites do possível.</p><br>
+            <p> Junte-se a nós enquanto continuamos a trilhar o caminho rumo a um futuro digital ainda mais promissor.</p>
+        </section>
+        
+    </main>
+    <footer class="site-info">
+        <ul>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+        <p>&copy; 2024 Stark Corporation</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
