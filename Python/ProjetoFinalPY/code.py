@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import mysql.connector
+from datetime import datetime
 
 class Tarefa:
     def __init__(self, nome, descricao, inicio, fim, status):
@@ -31,12 +32,12 @@ class GerenciadorTarefasApp:
         self.descricao_entry = tk.Entry(master, width=50)
         self.descricao_entry.grid(row=2, column=1, columnspan=2, padx=5, pady=5)
 
-        self.inicio_label = tk.Label(master, text="Data de Início (DD-MM-YYYY):", bg="white", fg="black")
+        self.inicio_label = tk.Label(master, text="Data de Início:", bg="white", fg="black")
         self.inicio_label.grid(row=3, column=0, padx=5, pady=5)
         self.inicio_entry = tk.Entry(master, width=20)
         self.inicio_entry.grid(row=3, column=1, padx=5, pady=5)
 
-        self.fim_label = tk.Label(master, text="Data de Término (DD-MM-YYYY):", bg="white", fg="black")
+        self.fim_label = tk.Label(master, text="Data de Término:", bg="white", fg="black")
         self.fim_label.grid(row=4, column=0, padx=5, pady=5)
         self.fim_entry = tk.Entry(master, width=20)
         self.fim_entry.grid(row=4, column=1, padx=5, pady=5)
@@ -73,27 +74,20 @@ class GerenciadorTarefasApp:
         inicio = self.inicio_entry.get()
         fim = self.fim_entry.get()
         status = self.status_var.get()
-        
-        # Verificar se as datas são válidas antes de salvar no banco de dados
-        if self.validar_data(inicio) and self.validar_data(fim):
-            tarefa = Tarefa(nome, descricao, inicio, fim, status)
-            self.tarefas.append(tarefa)
-            self.salvar_tarefa_no_bd(tarefa)
-            self.mostrar_tarefas()
-            self.limpar_campos()
-        else:
-            messagebox.showerror("Erro", "Data inválida. Use o formato DD-MM-YYYY.")
 
-    def validar_data(self, data):
-        try:
-            # Verifica se a data pode ser convertida para o formato 'DD-MM-YYYY'
-            parts = data.split("-")
-            if len(parts) != 3:
-                return False
-            day, month, year = map(int, parts)
-            return 1 <= day <= 31 and 1 <= month <= 12 and 1000 <= year <= 9999
-        except ValueError:
-            return False
+        # Convertendo a string de data para objeto datetime
+        data_inicio = datetime.strptime(inicio, "%d-%m-%Y")
+        data_fim = datetime.strptime(fim, "%d-%m-%Y")
+
+        # Formatando a data no formato 'YYYY-MM-DD'
+        inicio_formatado = data_inicio.strftime("%Y-%m-%d")
+        fim_formatado = data_fim.strftime("%Y-%m-%d")
+
+        tarefa = Tarefa(nome, descricao, inicio_formatado, fim_formatado, status)
+        self.tarefas.append(tarefa)
+        self.salvar_tarefa_no_bd(tarefa)
+        self.mostrar_tarefas()
+        self.limpar_campos()
 
     def mostrar_tarefas(self):
         for widget in self.tarefas_frame.winfo_children():
