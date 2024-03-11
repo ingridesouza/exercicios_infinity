@@ -31,12 +31,12 @@ class GerenciadorTarefasApp:
         self.descricao_entry = tk.Entry(master, width=50)
         self.descricao_entry.grid(row=2, column=1, columnspan=2, padx=5, pady=5)
 
-        self.inicio_label = tk.Label(master, text="Data de Início:", bg="white", fg="black")
+        self.inicio_label = tk.Label(master, text="Data de Início (DD-MM-YYYY):", bg="white", fg="black")
         self.inicio_label.grid(row=3, column=0, padx=5, pady=5)
         self.inicio_entry = tk.Entry(master, width=20)
         self.inicio_entry.grid(row=3, column=1, padx=5, pady=5)
 
-        self.fim_label = tk.Label(master, text="Data de Término:", bg="white", fg="black")
+        self.fim_label = tk.Label(master, text="Data de Término (DD-MM-YYYY):", bg="white", fg="black")
         self.fim_label.grid(row=4, column=0, padx=5, pady=5)
         self.fim_entry = tk.Entry(master, width=20)
         self.fim_entry.grid(row=4, column=1, padx=5, pady=5)
@@ -74,19 +74,26 @@ class GerenciadorTarefasApp:
         fim = self.fim_entry.get()
         status = self.status_var.get()
         
-        # Converter a data de início para o formato 'YYYY-MM-DD'
-        inicio = self.formatar_data(inicio)
-        
-        tarefa = Tarefa(nome, descricao, inicio, fim, status)
-        self.tarefas.append(tarefa)
-        self.salvar_tarefa_no_bd(tarefa)
-        self.mostrar_tarefas()
-        self.limpar_campos()
+        # Verificar se as datas são válidas antes de salvar no banco de dados
+        if self.validar_data(inicio) and self.validar_data(fim):
+            tarefa = Tarefa(nome, descricao, inicio, fim, status)
+            self.tarefas.append(tarefa)
+            self.salvar_tarefa_no_bd(tarefa)
+            self.mostrar_tarefas()
+            self.limpar_campos()
+        else:
+            messagebox.showerror("Erro", "Data inválida. Use o formato DD-MM-YYYY.")
 
-    def formatar_data(self, data):
-        # Formato esperado: 'DD-MM-YYYY'
-        partes = data.split('-')
-        return f"{partes[2]}-{partes[1]}-{partes[0]}"
+    def validar_data(self, data):
+        try:
+            # Verifica se a data pode ser convertida para o formato 'DD-MM-YYYY'
+            parts = data.split("-")
+            if len(parts) != 3:
+                return False
+            day, month, year = map(int, parts)
+            return 1 <= day <= 31 and 1 <= month <= 12 and 1000 <= year <= 9999
+        except ValueError:
+            return False
 
     def mostrar_tarefas(self):
         for widget in self.tarefas_frame.winfo_children():
