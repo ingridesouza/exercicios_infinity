@@ -152,7 +152,7 @@ populateCurrencySelects();
 async function convertCurrency() {
     const fromCurrencyId = document.getElementById('from-currency-select').value.toLowerCase();
     const toCurrencySymbol = document.getElementById('to-currency-select').value.toLowerCase();
-    const amount = document.getElementById('amount-input').value;
+    const amount = parseFloat(document.getElementById('amount-input').value); // Convertendo para número
 
     try {
         const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrencyId}&vs_currencies=${toCurrencySymbol}`);
@@ -169,10 +169,6 @@ async function convertCurrency() {
         console.error('Erro ao converter moeda:', error);
         document.getElementById('converted-result').textContent = "Erro na conversão. Por favor, tente novamente.";
     }
-
 }
 
-
 document.getElementById('convert-button').addEventListener('click', convertCurrency);
-
-
