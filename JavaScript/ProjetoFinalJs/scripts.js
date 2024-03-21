@@ -1,7 +1,6 @@
-
 async function filterCryptoData(filter) {
     const cryptoData = await getCryptoData();
-    const filteredCryptoData = cryptoData.filter(crypto => crypto.name.toLowerCase().includes(filter.toLowerCase()));
+    const filteredCryptoData = cryptoData.filter(crypto => crypto.name.toLowerCase().startsWith(filter.toLowerCase()));
 
     const cryptoInfoSection = document.getElementById('crypto-info');
     cryptoInfoSection.innerHTML = '';
@@ -11,33 +10,23 @@ async function filterCryptoData(filter) {
         card.classList.add('crypto-card');
 
         const logo = document.createElement('img');
-        logo.src = crypto.image;
+        logo.src = crypto.logo;
         logo.alt = crypto.name;
 
         const name = document.createElement('h2');
         name.textContent = crypto.name;
 
         const price = document.createElement('p');
-        price.textContent = `Preço: ${crypto.current_price} USD`;
+        price.textContent = `Preço: $${crypto.quote && crypto.quote.USD && crypto.quote.USD.price ? parseFloat(crypto.quote.USD.price).toFixed(2) : 'N/A'}`; 
 
         const description = document.createElement('p');
-        description.textContent = crypto.description;
-
+        description.textContent = crypto.description || 'Descrição não disponível';
+        
         card.appendChild(logo);
         card.appendChild(name);
         card.appendChild(price);
         card.appendChild(description);
-
-        card.onclick = function() {
-            const content = `
-                <h2>${crypto.name}</h2>
-                <img src="${crypto.image}" alt="${crypto.name}">
-                <p>Preço: ${crypto.current_price} USD</p>
-                <p>${crypto.description}</p>
-            `;
-            showModal(content);
-        };
-
+        
         cryptoInfoSection.appendChild(card);
     });
 }
@@ -47,29 +36,22 @@ document.getElementById('filter-input').addEventListener('input', function(event
     filterCryptoData(filter);
 });
 
-const modal = document.getElementById('modal');
-const closeBtn = document.getElementsByClassName('close')[0];
-
-function showModal(content) {
-    const modalContent = document.getElementById('modal-content');
-    modalContent.innerHTML = content;
-    modal.style.display = 'block';
-}
-
-closeBtn.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+async function getCryptoData() {
+    try {
+        const response = await fetch('https://api.allorigins.win/raw?url=https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=1fcac124-9426-42e5-8773-c754f1ebaf1b');
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error('Erro ao obter dados das criptomoedas:', error);
     }
 }
 
 
-async function getCryptoData() {
+
+
+async function fetchCryptoData() {
     try {
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1');
+        const response = await fetch('https://api.allorigins.win/raw?url=https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -77,8 +59,28 @@ async function getCryptoData() {
     }
 }
 
+async function fetchCryptoDataWithSymbols(symbols) {
+    try {
+        const response = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${symbols.join(',')}`);
+        const data = await response.json();
+        const cryptoData = {};
+        data.forEach(crypto => {
+            cryptoData[crypto.symbol] = {
+                image: crypto.image,
+                symbol: crypto.symbol
+            };
+        });
+        return cryptoData;
+    } catch (error) {
+        console.error('Erro ao obter dados das criptomoedas:', error);
+        return {};
+    }
+}
+
 async function displayCryptoData() {
-    const cryptoData = await getCryptoData();
+    const cryptoData = await fetchCryptoData();
+    const cryptoSymbols = cryptoData.map(crypto => crypto.symbol);
+    const cryptoDataWithSymbols = await fetchCryptoDataWithSymbols(cryptoSymbols);
     const cryptoInfoSection = document.getElementById('crypto-info');
 
     cryptoData.forEach(crypto => {
@@ -86,32 +88,25 @@ async function displayCryptoData() {
         card.classList.add('crypto-card');
 
         const logo = document.createElement('img');
-        logo.src = crypto.image;
+        const cryptoInfo = cryptoDataWithSymbols[crypto.symbol];
+
+        if (cryptoInfo && cryptoInfo.image) {
+            logo.src = cryptoInfo.image;
+        } else {
+            logo.src = '';
+        }
+
         logo.alt = crypto.name;
 
         const name = document.createElement('h2');
         name.textContent = crypto.name;
 
         const price = document.createElement('p');
-        price.textContent = `Preço: ${crypto.current_price} USD`;
-
-        const description = document.createElement('p');
-        description.textContent = crypto.description;
+        price.textContent = `Preço: $${parseFloat(crypto.current_price).toFixed(2)}`;
 
         card.appendChild(logo);
         card.appendChild(name);
         card.appendChild(price);
-        card.appendChild(description);
-
-        card.onclick = function() {
-            const content = `
-                <h2>${crypto.name}</h2>
-                <img src="${crypto.image}" alt="${crypto.name}">
-                <p>Preço: ${crypto.current_price} USD</p>
-                <p>${crypto.description}</p>
-            `;
-            showModal(content);
-        };
 
         cryptoInfoSection.appendChild(card);
     });
@@ -119,56 +114,66 @@ async function displayCryptoData() {
 
 displayCryptoData();
 
-async function getCryptoCurrencies() {
+
+
+
+async function convertCurrency(fromCurrencyId, toCurrencySymbol, amount) {
     try {
-        const response = await fetch('https://api.coingecko.com/api/v3/coins/list');
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const apiUrl = `https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount=${amount}&symbol=${fromCurrencyId}&convert=${toCurrencySymbol}&CMC_PRO_API_KEY=1fcac124-9426-42e5-8773-c754f1ebaf1b`;
+        
+        const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
-        return data;
+
+        if (data.status.error_code === 0 && data.data && data.data.quote && data.data.quote[toCurrencySymbol]) {
+            const convertedAmount = data.data.quote[toCurrencySymbol].price;
+            return convertedAmount;
+        } else {
+            throw new Error("Erro na conversão. Por favor, tente novamente.");
+        }
     } catch (error) {
-        console.error('Erro ao obter lista de criptomoedas:', error);
+        throw new Error("Erro na conversão. Por favor, tente novamente.");
     }
 }
 
+
+
+
 async function populateCurrencySelects() {
-    const currencies = await getCryptoCurrencies();
+    const cryptoData = await getCryptoData();
     const fromCurrencySelect = document.getElementById('from-currency-select');
     const toCurrencySelect = document.getElementById('to-currency-select');
 
-    currencies.forEach(currency => {
+    cryptoData.forEach(crypto => {
         const optionFrom = document.createElement('option');
-        optionFrom.value = currency.id;
-        optionFrom.textContent = currency.name;
+        optionFrom.value = crypto.symbol.toUpperCase();
+        optionFrom.textContent = crypto.symbol.toUpperCase();
         fromCurrencySelect.appendChild(optionFrom);
 
         const optionTo = document.createElement('option');
-        optionTo.value = currency.id;
-        optionTo.textContent = currency.name;
+        optionTo.value = crypto.symbol.toUpperCase();
+        optionTo.textContent = crypto.symbol.toUpperCase();
         toCurrencySelect.appendChild(optionTo);
     });
 }
 
 populateCurrencySelects();
 
-async function convertCurrency() {
-    const fromCurrencyId = document.getElementById('from-currency-select').value.toLowerCase();
-    const toCurrencySymbol = document.getElementById('to-currency-select').value.toLowerCase();
-    const amount = parseFloat(document.getElementById('amount-input').value); // Convertendo para número
+async function convertAndDisplay() {
+    const amount = parseFloat(document.getElementById('amount-input').value);
+    const fromCurrencySymbol = document.getElementById('from-currency-select').value;
+    const toCurrencySymbol = document.getElementById('to-currency-select').value;
 
     try {
-        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${fromCurrencyId}&vs_currencies=${toCurrencySymbol}`);
-        const data = await response.json();
-
-        if (data && data[fromCurrencyId] && data[fromCurrencyId][toCurrencySymbol]) {
-            const rate = data[fromCurrencyId][toCurrencySymbol];
-            const convertedAmount = amount * rate;
-            document.getElementById('converted-result').textContent = `${amount} ${fromCurrencyId.toUpperCase()} = ${convertedAmount.toFixed(2)} ${toCurrencySymbol.toUpperCase()}`;
-        } else {
-            document.getElementById('converted-result').textContent = "Erro na conversão. Por favor, tente novamente.";
-        }
+        const convertedAmount = await convertCurrency(fromCurrencySymbol, toCurrencySymbol, amount);
+        const resultMessage = `O valor da conversão de ${amount} ${fromCurrencySymbol} para ${toCurrencySymbol} é ${convertedAmount.toFixed(2)}`;
+        document.getElementById('converted-result').textContent = resultMessage;
     } catch (error) {
         console.error('Erro ao converter moeda:', error);
-        document.getElementById('converted-result').textContent = "Erro na conversão. Por favor, tente novamente.";
+        const errorMessage = "Erro na conversão. Por favor, tente novamente.";
+        document.getElementById('converted-result').textContent = errorMessage;
     }
 }
 
-document.getElementById('convert-button').addEventListener('click', convertCurrency);
+document.getElementById('convert-button').addEventListener('click', convertAndDisplay);
+

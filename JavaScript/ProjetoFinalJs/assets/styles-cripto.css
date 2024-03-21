@@ -148,6 +148,7 @@
 .info-1 {
     padding: 5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align:center;
@@ -159,6 +160,12 @@
     line-height: 1.6;
     margin-bottom: 20px;
     text-align: right;
+}
+
+.info-1 ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .info-1 img {

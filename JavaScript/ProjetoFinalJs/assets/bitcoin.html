@@ -14,36 +14,23 @@
 <body>
     <header class="header">
         <h1 class="header-title">Stark Industries</h1>
-
-        <div class="buttons-dropdown">
-            <div class="dropdown">
-                <span class="material-symbols-outlined">
-                    contact_support
-                    </span>
-                <button class="dropdown-btn" id="contact-dropdown-btn">Contato</button>
-                <div class="dropdown-content" id="contact-dropdown-content">
-                    <a href="#">E-mail</a>
-                    <a href="#">Telefone</a>
-                    <a href="#">Endereço</a>
-                </div>
-            </div>
-    
-            <div class="dropdown">
-                <span class="material-symbols-outlined">
-                    monetization_on
-                    </span>
-                <button class="dropdown-btn" id="crypto-dropdown-btn">Criptomoedas Disponíveis</button>
+        
+                <div class="dropdown">
+                    <span class="material-symbols-outlined">
+                        monetization_on
+                        </span>
+                    <button class="dropdown-btn" id="crypto-dropdown-btn">Criptomoedas Populares</button>
                 <div class="dropdown-content" id="crypto-dropdown-content">
-                    <a href="assets/bitcoin.html">Bitcoin</a>
-                    <a href="#">Ethereum</a>
-                    <a href="#">Tether</a>
-                    <a href="#">BNB</a>
-                    <a href="assets/solana.html">Solana</a>
-                    <a href="assets/lido.html">Lido Staked Ether</a>
-                    <a href="assets/xrp.html">XRP</a>
-                    <a href="assets/usdcoin.html">USDC</a>
-                    <a href="assets/cardano.html">Cardano</a>
-                    <a href="assets/dogecoin.html">Dogecoin</a>
+                    <a href="bitcoin.html">Bitcoin</a>
+                    <a href="ethereum.html">Ethereum</a>
+                    <a href="tether.html">Tether</a>
+                    <a href="bnb.html">BNB</a>
+                    <a href="solana.html">Solana</a>
+                    <a href="lido.html">Lido Staked Ether</a>
+                    <a href="xrp.html">XRP</a>
+                    <a href="usdcoin.html">USDC</a>
+                    <a href="cardano.html">Cardano</a>
+                    <a href="dogecoin.html">Dogecoin</a>
     
                 </div>
             </div>
@@ -64,11 +51,11 @@
         <section id="second-section">
             <h1>O Jogo dos Riscos e Oportunidades</h1>
             <div class="container">
-                <div class="info card-info"> <!-- Adiciona uma nova classe 'card-info' -->
+                <div class="info card-info"> 
                     <p>O Bitcoin, como qualquer outro investimento, apresenta uma série de riscos e oportunidades para os seus participantes. Por um lado, a volatilidade do mercado de criptomoedas pode oferecer oportunidades de lucro excepcionais, com valorizações rápidas e substanciais em curtos períodos de tempo. No entanto, essa mesma volatilidade também pode representar um risco significativo, levando a perdas substanciais de capital.</p>
                 </div>
                 
-                <div class="card-volatilidade"> <!-- Mantém a classe 'card-volatilidade' -->
+                <div class="card-volatilidade">
                     <div class="card-volatilidade-image">
                         <img src="images/volatilidade_btc.png" alt="">
                     </div>
@@ -90,5 +77,20 @@
         </ul>
         <p>&copy; 2024 Stark Corporation</p>
     </footer>
+
+    <script>
+        async function fetchBitcoinPrice() {
+            try {
+                const response = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC&CMC_PRO_API_KEY=1fcac124-9426-42e5-8773-c754f1ebaf1b');
+                const data = await response.json();
+                const bitcoinPrice = data.data.BTC.quote.USD.price;
+                document.getElementById('bitcoin-card').setAttribute('data-content', `BITCOIN ${bitcoinPrice} USD`);
+            } catch (error) {
+                console.error('Erro ao obter o preço do Bitcoin:', error);
+            }
+        }
+
+        fetchBitcoinPrice();
+    </script>
 </body>
 </html>

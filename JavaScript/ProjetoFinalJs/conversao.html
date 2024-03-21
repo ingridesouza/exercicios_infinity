@@ -26,7 +26,7 @@
                 <span class="material-symbols-outlined">
                     calculate
                     </span>
-                <button class="dropdown-btn" id="contact-dropdown-btn"><a href="conversao.html">Conversão de Cripto</a></button>
+                <button class="dropdown-btn" id="contact-dropdown-btn"><a href="#">Conversão de Cripto</a></button>
             </div>
     
             <div class="dropdown">
@@ -56,29 +56,30 @@
     </header>
     
     <main>
-        <section id="description-site">
-            <h1>Stark Industries: Seu Portal de Criptomoedas e Conversão</h1>
-
-            <p>Bem-vindo ao Stark Industries, o seu destino definitivo para explorar o emocionante mundo das criptomoedas. Aqui, no coração da inovação tecnológica, oferecemos uma plataforma completa que não apenas fornece informações detalhadas sobre as criptomoedas mais proeminentes do mercado, mas também permite que você converta suas moedas digitais de forma rápida e eficiente.</p>
-
-            <p>Em nosso site, você encontrará uma lista abrangente das criptomoedas mais famosas, desde os pesos pesados como Bitcoin e Ethereum até as moedas emergentes que estão moldando o futuro das finanças descentralizadas. Cada criptomoeda é acompanhada por uma descrição detalhada, fornecendo insights essenciais sobre sua tecnologia subjacente, histórico de preços e casos de uso.</p>
-
-        </section>
-
-        <div id="crypto-info" class="crypto-container"></div>
         
-
-        <section id="conclusion-site">
-            <p>A Stark Corporation está embarcando em uma emocionante jornada rumo ao universo das criptomoedas e dos NFTs. Com uma mentalidade de vanguarda e um compromisso com a inovação, estamos prontos para explorar novas fronteiras e desafiar os limites do possível.</p><br>
-            <p> Junte-se a nós enquanto continuamos a trilhar o caminho rumo a um futuro digital ainda mais promissor.</p>
-        </section>
-        
-        <div class="card-email">
-            <div class="email-subscription">
-                <label for="email-input">Deseja receber atualizações por email?</label>
-                <input type="email" id="email-input" placeholder="Digite seu email">
-                <button id="subscribe-button">Inscrever-se</button>
-            </div>
+        <div class="div-wrapper">
+            <h1>Converta as suas criptos aqui!</h1>
+           
+            <label for="from-currency-select">Moeda de Origem:</label>
+            <select id="from-currency-select">
+               
+            </select>
+            
+           
+            <label for="to-currency-select">Moeda de Destino:</label>
+            <select id="to-currency-select">
+              
+            </select>
+            
+            
+            <label for="amount-input">Valor:</label>
+            <input type="number" id="amount-input" step="0.01" placeholder="Insira o valor">
+            
+            
+            <button id="convert-button">Converter</button>
+            
+            
+            <p id="converted-result"></p>
         </div>
 
     </main>
