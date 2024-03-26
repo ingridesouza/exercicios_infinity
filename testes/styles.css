@@ -14,10 +14,10 @@
 :root {
     --bg-color: #fff;
     --text-color: #333;
-    --main-color: #d720dd;
-    --white-color: #601063;
+    --main-color: #dd2020;
+    --white-color: #631010;
     --shadow-color: rgba(0, 0, 0, .2);
-    --bg2-color: #10092c;
+    --bg2-color: #3a0f0f;
 }
 
 *::selection {
@@ -26,10 +26,10 @@
 }
 
 .dark-mode {
-    --bg-color: #0b061f;
+    --bg-color: #000000;
     --text-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .7);
-    --bg2-color: #9308bd;
+    --bg2-color: #bd0808;
 }
 
 html {

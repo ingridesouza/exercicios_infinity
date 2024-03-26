@@ -40,7 +40,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 3rem;
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     @media(min-width: 870px) {
         flex-direction: row;
     }
@@ -100,7 +100,6 @@ body {
 
 /* Estilo para a seção #home */
 #home {
-    background-color: rgb(255, 0, 0);
     font-size: 2.6rem;
     padding: 2rem; /* Adicionado padding para melhorar a legibilidade */
 }
@@ -115,7 +114,7 @@ body {
     padding: 5rem;
     gap: 2rem;
     font-size: 1.6rem;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .posImg h1 {
