@@ -12,11 +12,14 @@ class Biblioteca:
         self.livros = []
 
     
-    def adicionarLivro(self, livro):
-        self.livros.append(livro)
+    def adicionarLivro(self, titulo, autor, ano):
+        livro = Livro(titulo, autor, ano)
+        biblioteca.adicionar_livro(livro)
 
     def pesquisarLivro(self, livro):
-        pass
+        for livro in self.livros:
+            if livro == termo:
+                print(livro)
 
     def visualizar_livros(self):
         for livro in self.livros:
@@ -38,11 +41,10 @@ while True:
             livro = Livro(titulo, autor, ano)
             biblioteca.adicionar_livro(livro)
         case '2':
-            termo = input("Digite o termo de pesquisa (título ou autor): ")
+            termo = input("Digite o título do livro para a pesquisa: ")
             biblioteca.pesquisar_livro(termo)
         case '3':
             titulo = input("Digite o título do livro que deseja emprestar: ")
-            # Verificar se o livro está disponível e emprestar se estiver
             for livro in biblioteca.livros:
                 if livro.titulo == titulo:
                     biblioteca.emprestar_livro(livro)

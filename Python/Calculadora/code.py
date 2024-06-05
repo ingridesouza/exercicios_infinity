@@ -49,6 +49,6 @@ while True:
             print('Saindo do Sistema...')
             break
 
-        case _: #dunder
+        case _: #dunder __ => double underscore | _ => default
             print('Número Inválido')
 

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // EXEMPLO 1
+        // let contador = 0
+
+        // while (contador < 10){
+        //     console.log(contador)
+        //     contador++
+        // }
+
+        // EXEMPLO 2
+        // let contador = 
+
+        // do {
+        //     console.log(`Executando primeiro -> Valor do contador: ${contador}`)
+        // }while(contador )
+        
+        //EXEMPLO 3
+
+        // let contador = 0
+
+        // while(contador<5){
+        //     console.log(contador)
+        //     if (contador===4){
+        //         console.log(`Contamos até o numero 4. Contador = ${contador}`)
+        //         break
+        //     }
+        //     contador++
+        // }
+
+
+        // EXEMPLO 4
+
+        // let contador = 0
+
+        // while(contador<10){
+        //     contador++
+        //     if (contador===5){
+        //         continue
+        //     }
+        //     console.log(contador)
+        // }
+        // console.log(`O laço finalmente foi quebrado e finalizado com o valor: ${contador}`)
+
+        //=======EXERCICIO 1=========
+
+        // let numero = parseInt(prompt("Digite um número:"));
+
+        // while (numero >= 0) {
+        //     console.log(numero);
+        //     numero--;
+        // }
+
+        // console.log("Contagem regressiva concluída!");
+
+        //======EXERCICIO 2==========
+        // let notas = [];
+        // let soma = 0;
+
+        // while (true) {
+        //     let nota = prompt("Insira a sua nota ou 'SAIR' para encerrar:");
+
+        //     if (nota === 'SAIR') {
+        //         alert("Saindo....");
+        //         break;
+        //     } else {
+        //         nota = parseFloat(nota);
+        //         if (!isNaN(nota)) {
+        //             notas.push(nota);
+        //             soma += nota; // Adiciona a nota à soma
+        //         }
+        //     }
+        // }
+
+        // if (notas.length === 0) {
+        //     console.log("Nenhuma nota foi inserida.");
+        // } else {
+        //     let media = soma / notas.length;
+        //     console.log("A média das notas é: " + media.toFixed(2));
+        // }
+
+        //======EXERCICIO 2==========
+
+        // let soma = 0;
+        // let numero;
+
+        // do {
+        //     numero = parseFloat(prompt("Insira um número (ou 0 para encerrar):"));
+        //     soma += numero;
+        // } while (numero !== 0);
+
+        // console.log("O somatório dos números inseridos é: " + soma);
+
+        //=======ATIVIDADE PRÁTICA========
+
+        let saldo = 1000;
+        let escolha;
+
+        while (true) {
+            console.log("\n==== Menu ====");
+            console.log("1. Ver Saldo");
+            console.log("2. Fazer Saque");
+            console.log("3. Fazer Depósito");
+            console.log("4. Sair");
+
+            escolha = parseInt(prompt("Escolha uma opção:"));
+
+            switch (escolha) {
+                case 1:
+                    console.log(`Seu saldo atual é: $${saldo}`);
+                    break;
+                case 2:
+                    let saque = parseFloat(prompt("Digite o valor do saque:"));
+                    if (isNaN(saque) || saque <= 0 || saque > saldo) {
+                        console.log("ATENÇÃO! Valor de saque inválido.");
+                    } else {
+                        saldo = parseFloat((saldo - saque).toFixed(2));
+                        console.log(`Saque de $${saque} realizado com sucesso. Novo saldo: $${saldo}`);
+                    }
+                    break;
+                case 3:
+                    let deposito = parseFloat(prompt("Digite o valor do depósito:"));
+                    if (isNaN(deposito) || deposito <= 0) {
+                        console.log("ATENÇÃO! Valor de depósito inválido.");
+                    } else {
+                        saldo = parseFloat((saldo + deposito).toFixed(2));
+                        console.log(`Depósito de $${deposito} realizado com sucesso. Novo saldo: $${saldo}`);
+                    }
+                    break;
+                case 4:
+                    console.log("Obrigado por usar o caixa eletrônico. Volte sempre!");
+                    break;
+
+                default:
+                    console.log("Opção inválida. Por favor, escolha uma opção válida.");
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

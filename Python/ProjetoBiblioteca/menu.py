@@ -20,23 +20,26 @@ while True:
         case "1":
             titulo = input("Digite o título do livro: ")
             autor = input("Digite o autor do livro: ")
-            biblioteca.adicionar_livro(titulo, autor)
+            print(biblioteca.adicionar_livro(titulo, autor))
         case "2":
             nome = input("Digite o nome do membro: ")
-            biblioteca.adicionar_membro(nome)
+            print(biblioteca.adicionar_membro(nome))
         case "3":
             id_livro = int(input("Digite o ID do livro: "))
             id_membro = int(input("Digite o ID do membro: "))
-            biblioteca.emprestar_livro(id_livro, id_membro)
+            print(biblioteca.emprestar_livro(id_livro, id_membro))
         case "4":
             id_livro = int(input("Digite o ID do livro: "))
             id_membro = int(input("Digite o ID do membro: "))
-            biblioteca.registrar_devolucao(id_livro, id_membro)
+            print(biblioteca.registrar_devolucao(id_livro, id_membro))
         case "5":
             termo = input("Digite o termo de pesquisa: ")
-            biblioteca.pesquisar_livros(termo)
+            print(biblioteca.pesquisar_livros(termo))
         case "6":
-            biblioteca.visualizar_catalogo()
+            print('-- CATÁLOGO DE LIVROS--')
+            print('TODOS:')
+            for livro in biblioteca.catalogo:
+                print(f"Título: {livro.titulo} - Autor: {livro.autor}")
         case "0":
             print("Saindo do programa...")
             break
