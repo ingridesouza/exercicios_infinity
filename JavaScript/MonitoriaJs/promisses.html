@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // O que são async e await?
+        // async e await são palavras-chave em JavaScript que tornam o trabalho com código assíncrono mais simples e legível. Elas permitem escrever código assíncrono que parece síncrono.
+
+        // async: Marca uma função como assíncrona. Uma função marcada com async sempre retorna uma Promise.
+        // await: Pausa a execução da função assíncrona até que a Promise após await seja resolvida. Só pode ser usada dentro de funções marcadas com async.
+
+        // =============================
+        //Como Usar async e await
+
+
+        //========================================================================================
+        // Com async e await
+
+        async function fetchData() {
+                // Definimos uma função assíncrona:    
+                // async function fetchData() { ... }
+                // A função fetchData agora retorna uma Promise e pode usar await dentro dela.
+        try {
+            const response = await fetch('https://api.covid19api.com/summary'); // Espera a requisição ser concluída
+            
+            // Usamos await para operações assíncronas:
+            // const response = await fetch('https://api.example.com/data');
+            // await faz com que a execução da função pause até que a fetch termine e retorne o response.
+            
+            const data = await response.json(); // Espera a conversão para JSON
+            
+            // Processamos a resposta:
+            // const data = await response.json();
+            // Novamente, usamos await para esperar até que a conversão do response para JSON seja concluída.
+            
+            console.log(data); // Processa os dados
+        } catch (error) {
+            
+            // Tratamos erros com try/catch:
+            // try { ... } catch (error) { ... }
+            // Usamos try/catch para capturar e lidar com qualquer erro que possa ocorrer durante a execução assíncrona.
+            
+            console.error('Erro ao buscar os dados:', error);
+        }
+        }
+
+
+        fetchData();
+        //========================================================================================
+
+        // Para recapitular:
+
+        // async: Define uma função que retorna uma Promise.
+        // await: Espera a resolução de uma Promise e só pode ser usado dentro de funções async.
+    </script>
+</body>
+</html>

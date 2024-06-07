@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //sintaxe
+        function primeiraFuncao(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('Esperou isso aqui!!!')
+                    resolve()
+                }, 1000)
+            })
+        }
+
+        async function segundaFuncao(){
+            console.log("Iniciou")
+
+            await primeiraFuncao()
+
+            console.log("Terminou")
+        }
+
+        segundaFuncao();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Fetch()  -> Função que já tem no JavaScript mais atual para fazer requisições HTTP (como GET, POST, PUT, DELETE) de maneira simples e eficiente, e baseados em promessas./
