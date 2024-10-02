@@ -12,7 +12,6 @@ class GerenciadorTarefasApp:
         self.master.title("Gerenciador de Tarefas")
         self.master.configure(bg="white")
 
-        # Definindo a fonte Times New Roman
         self.fonte_times_new_roman = ("Times New Roman", 12)
 
         self.stark_label = tk.Label(master, text="Stark Corporation", bg="black", fg="white", font=self.fonte_times_new_roman)
@@ -20,7 +19,7 @@ class GerenciadorTarefasApp:
 
         self.tarefas = []
 
-        # Criação dos campos para entrada de dados
+        # campos para entrada de dados
         self.nome_label = tk.Label(master, text="Nome:", bg="white", fg="black", font=self.fonte_times_new_roman)
         self.nome_label.grid(row=1, column=0, padx=5, pady=5)
         self.nome_entry = tk.Entry(master, width=50, font=self.fonte_times_new_roman)
@@ -58,10 +57,10 @@ class GerenciadorTarefasApp:
         self.tarefas_frame.grid(row=8, column=0, columnspan=3, padx=5, pady=5)
         self.mostrar_tarefas()
 
-        # Conectar ao banco de dados MySQL
+        # Conectando ao banco de dados MySQL
         self.db_manager = DatabaseManager()
 
-    # Método para adicionar uma nova tarefa
+    # Adicionar uma nova tarefa
     def adicionar_tarefa(self):
         nome = self.nome_entry.get()
         descricao = self.descricao_entry.get()
@@ -69,11 +68,9 @@ class GerenciadorTarefasApp:
         fim = self.fim_entry.get()
         status = self.status_var.get()
 
-        # Convertendo a string de data para objeto datetime
         data_inicio = datetime.strptime(inicio, "%d-%m-%Y")
         data_fim = datetime.strptime(fim, "%d-%m-%Y")
 
-        # Formatando a data no formato 'YYYY-MM-DD'
         inicio_formatado = data_inicio.strftime("%Y-%m-%d")
         fim_formatado = data_fim.strftime("%Y-%m-%d")
 
@@ -83,12 +80,11 @@ class GerenciadorTarefasApp:
         self.mostrar_tarefas()
         self.limpar_campos()
 
-    # Método para mostrar tarefas
+    # Mostrar tarefas
     def mostrar_tarefas(self):
         for widget in self.tarefas_frame.winfo_children():
             widget.destroy()
 
-        # Exibir as tarefas com um background "zebrada"
         bg_color = ["white", "lightgrey"]
         for i, tarefa in enumerate(self.tarefas, start=1):
             descricao_label = tk.Label(self.tarefas_frame, text=f"{tarefa.nome} - {tarefa.descricao} - Status: {tarefa.status}", bg=bg_color[i%2], fg="black", font=self.fonte_times_new_roman)
@@ -99,7 +95,7 @@ class GerenciadorTarefasApp:
             if tarefa.status == "Concluído":
                 descricao_label.config(bg="lightgreen", font=self.fonte_times_new_roman)
 
-    #Método para limpar os campos de entrada
+    # Limpar os campos de entrada
     def limpar_campos(self):
         self.nome_entry.delete(0, tk.END)
         self.descricao_entry.delete(0, tk.END)
@@ -107,7 +103,7 @@ class GerenciadorTarefasApp:
         self.fim_entry.delete(0, tk.END)
         self.status_var.set("A Fazer")
 
-    # Método para remover tarefas concluídas
+    # Remover tarefas concluídas
     def remover_tarefas_concluidas(self):
         tarefas_restantes = [tarefa for tarefa in self.tarefas if tarefa.status != "Concluído"]
         tarefas_removidas = [tarefa for tarefa in self.tarefas if tarefa.status == "Concluído"]
@@ -117,7 +113,7 @@ class GerenciadorTarefasApp:
         if tarefas_removidas:
             messagebox.showinfo("Tarefas Removidas", "Tarefas concluídas removidas com sucesso.")
 
-    # Método para marcar como concluida
+    # Marcar como concluida
     def marcar_concluido(self, idx):
         if self.tarefas[idx].status == "Concluído":
             self.tarefas[idx].status = "A Fazer"
